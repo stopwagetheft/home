@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wage Theft Fairfax — Know Your Rights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1a2744; --navy-light: #2a3d6b; --gold: #b8882a; --gold-light: #e8b84b;
+    --cream: #f8f5ef; --red: #9b2a2a; --text: #1c1c1e; --text-muted: #5a5a65;
+    --border: rgba(26,39,68,0.12); --white: #ffffff;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  nav {
+    background: var(--navy); padding: 0 2rem; display: flex; align-items: center;
+    justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .nav-brand {
+    font-family: 'Libre Baskerville', serif; color: var(--white); font-size: 1.05rem;
+    font-weight: 700; display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand .dot { width: 8px; height: 8px; background: var(--gold-light); border-radius: 50%; display: inline-block; }
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+  .nav-links { display: flex; gap: 0; list-style: none; }
+  .nav-links button {
+    background: none; border: none; color: rgba(255,255,255,0.72); font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem; font-weight: 400; padding: 0.5rem 1rem; cursor: pointer;
+    border-radius: 6px; transition: color 0.15s, background 0.15s; letter-spacing: 0.02em;
+  }
+  .nav-links button:hover, .nav-links button.active { color: #fff; background: rgba(255,255,255,0.1); }
+  .nav-links button.active { color: var(--gold-light); }
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    display: flex; align-items: center; background: rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 3px; gap: 2px; margin-left: 12px;
+  }
+  .lang-toggle button {
+    background: none; border: none; color: rgba(255,255,255,0.6); font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 16px;
+    cursor: pointer; transition: all 0.2s; letter-spacing: 0.06em;
+  }
+  .lang-toggle button.active { background: var(--gold); color: white; }
+  .lang-toggle button:hover:not(.active) { color: white; }
+
+  .page { display: none; animation: fadeIn 0.3s ease; }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero {
+    background: var(--navy); color: white; padding: 5rem 2rem 4rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px);
+  }
+  .hero-label {
+    display: inline-block; background: var(--gold); color: white; font-size: 0.7rem;
+    font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 3px; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Libre Baskerville', serif; font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem;
+    max-width: 720px; margin-left: auto; margin-right: auto;
+  }
+  .hero p {
+    font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 560px;
+    margin: 0 auto 2rem; line-height: 1.7; font-weight: 300;
+  }
+  .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--gold); color: white; border: none; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; padding: 0.75rem 1.75rem; border-radius: 6px;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline {
+    background: transparent; color: white; border: 1px solid rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 400;
+    padding: 0.75rem 1.75rem; border-radius: 6px; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+  .section-heading { font-family: 'Libre Baskerville', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .section-sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; line-height: 1.6; }
+  .divider { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 0.75rem 0 1.5rem; }
+
+  .def-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.25rem; }
+  .def-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px; }
+  .def-card h3 .icon { width: 28px; height: 28px; background: #eef1f8; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .def-card p, .def-card li { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+  .def-card ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+  .def-card ul li { margin-bottom: 0.35rem; }
+
+  .alert-box { background: #fdf3f3; border: 1px solid #e8c0c0; border-left: 4px solid var(--red); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+  .alert-box p { color: #5c1f1f; font-size: 0.9rem; line-height: 1.65; }
+  .alert-box strong { color: var(--red); }
+
+  .rights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .right-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+  .right-item .num { font-family: 'Libre Baskerville', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 0.5rem; opacity: 0.15; }
+  .right-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+  .right-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-align: center; }
+  .stat-card .num { font-family: 'Libre Baskerville', serif; font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 0.35rem; }
+  .stat-card .label { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
+
+  .chart-section { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; }
+  .chart-section h3 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.35rem; }
+  .chart-section .chart-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+  .chart-wrap { position: relative; width: 100%; }
+
+  .testimonial-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.25rem; position: relative; }
+  .testimonial-card::before { content: '\201C'; font-family: 'Libre Baskerville', serif; font-size: 5rem; color: var(--navy); opacity: 0.07; position: absolute; top: 0.5rem; left: 1.25rem; line-height: 1; }
+  .testimonial-card blockquote { font-family: 'Libre Baskerville', serif; font-size: 1rem; color: var(--text); line-height: 1.75; margin-bottom: 1.25rem; font-style: italic; position: relative; z-index: 1; }
+  .testimonial-footer { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: #eef1f8; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 0.875rem; font-weight: 700; color: var(--navy); flex-shrink: 0; }
+  .testimonial-meta .name { font-size: 0.875rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .testimonial-meta .detail { font-size: 0.78rem; color: var(--text-muted); }
+  .tag { margin-left: auto; background: #eef1f8; color: var(--navy-light); font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+
+  .share-note { background: var(--navy); color: rgba(255,255,255,0.8); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2rem; }
+  .share-note h3 { font-family: 'Libre Baskerville', serif; color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .share-note p { font-size: 0.875rem; line-height: 1.65; margin-bottom: 1.25rem; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 1.5rem 2rem; font-size: 0.78rem; margin-top: 4rem; }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  /* RESOURCES PAGE */
+  .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+  .resource-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .resource-card .rc-icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .resource-card h4 { font-family: 'Libre Baskerville', serif; font-size: 1rem; color: var(--navy); }
+  .resource-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+  .resource-card a { display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; font-weight: 600; color: var(--gold); text-decoration: none; }
+  .resource-card a:hover { text-decoration: underline; }
+  .resource-card .phone { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-top: 0.25rem; }
+  .step-list { counter-reset: steps; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+  .step-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.25rem 1.25rem 4rem; position: relative; }
+  .step-item::before { counter-increment: steps; content: counter(steps); position: absolute; left: 1.1rem; top: 1.1rem; width: 28px; height: 28px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; font-family: 'Libre Baskerville', serif; }
+  .step-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .step-item p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* RIGHTS PAGE */
+  .rights-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+  .accordion-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .accordion-btn { width: 100%; background: none; border: none; padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; gap: 1rem; }
+  .accordion-btn .acc-title { font-family: 'Libre Baskerville', serif; font-size: 0.97rem; color: var(--navy); font-weight: 700; }
+  .accordion-btn .acc-arrow { font-size: 0.75rem; color: var(--text-muted); transition: transform 0.25s; flex-shrink: 0; }
+  .accordion-item.open .acc-arrow { transform: rotate(180deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .accordion-body-inner { padding: 0 1.5rem 1.25rem; }
+  .accordion-body-inner p, .accordion-body-inner li { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+  .accordion-body-inner ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+  .accordion-body-inner li { margin-bottom: 0.3rem; }
+  .law-badge { display: inline-block; background: #eef1f8; color: var(--navy-light); font-size: 0.7rem; font-weight: 600; padding: 2px 9px; border-radius: 4px; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .green-box { background: #f0faf4; border: 1px solid #b7dfc6; border-left: 4px solid #2a7d4f; border-radius: 8px; padding: 1.1rem 1.4rem; margin: 1.5rem 0; }
+  .green-box p { color: #1a4a30; font-size: 0.875rem; line-height: 1.65; }
+  .green-box strong { color: #1a4a30; }
+
+  /* CALCULATOR PAGE */
+  .calc-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  @media (max-width: 680px) { .calc-wrap { grid-template-columns: 1fr; } }
+  .calc-form { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; }
+  .calc-form h3 { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1.5rem; }
+  .field-group { margin-bottom: 1.25rem; }
+  .field-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; letter-spacing: 0.02em; }
+  .field-group input, .field-group select {
+    width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text);
+    background: var(--cream); outline: none; transition: border-color 0.15s;
+  }
+  .field-group input:focus, .field-group select:focus { border-color: var(--navy); background: white; }
+  .field-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; }
+  .calc-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+  .checkbox-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.85rem; }
+  .checkbox-row input[type=checkbox] { margin-top: 3px; accent-color: var(--navy); width: 16px; height: 16px; flex-shrink: 0; }
+  .checkbox-row label { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; cursor: pointer; }
+  .btn-calc {
+    width: 100%; background: var(--navy); color: white; border: none; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    padding: 0.85rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem;
+  }
+  .btn-calc:hover { background: var(--navy-light); }
+  .btn-reset {
+    width: 100%; background: none; color: var(--text-muted); border: 1px solid var(--border); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem; padding: 0.6rem;
+    cursor: pointer; margin-top: 0.5rem; transition: all 0.15s;
+  }
+  .btn-reset:hover { border-color: var(--navy); color: var(--navy); }
+
+  .calc-results { position: sticky; top: 80px; }
+  .result-card { background: var(--navy); color: white; border-radius: 14px; padding: 2rem; margin-bottom: 1rem; }
+  .result-card .result-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.4rem; }
+  .result-card .result-amount { font-family: 'Libre Baskerville', serif; font-size: 2.75rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.5rem; }
+  .result-card .result-sub { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+  .result-breakdown { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+  .result-breakdown h4 { font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: var(--navy); margin-bottom: 1rem; }
+  .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .breakdown-row:last-child { border-bottom: none; font-weight: 700; color: var(--navy); }
+  .breakdown-row .bd-label { color: var(--text-muted); }
+  .breakdown-row .bd-val { font-weight: 600; color: var(--navy); }
+  .breakdown-row.total .bd-val { color: var(--red); font-size: 1rem; }
+  .result-placeholder { background: var(--white); border: 2px dashed var(--border); border-radius: 14px; padding: 3rem 2rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; line-height: 1.6; }
+  .result-placeholder .ph-icon { font-size: 2.5rem; margin-bottom: 0.75rem; opacity: 0.4; }
+  .next-steps-box { background: #fdf8ee; border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+  .next-steps-box p { font-size: 0.83rem; color: #5a4a1a; line-height: 1.65; }
+  .next-steps-box strong { color: var(--gold); }
+
+  /* QUIZ PAGE */
+  .quiz-shell { max-width: 680px; margin: 0 auto; }
+  .quiz-progress-wrap { margin-bottom: 2rem; }
+  .quiz-progress-label { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500; }
+  .quiz-progress-bar { height: 6px; background: var(--cream-dark, #ede9e0); border-radius: 3px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: var(--navy); border-radius: 3px; transition: width 0.4s ease; }
+
+  .quiz-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; animation: fadeIn 0.3s ease; }
+  .quiz-card .q-tag { display: inline-block; background: #eef1f8; color: var(--navy-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 1rem; }
+  .quiz-card .q-text { font-family: 'Libre Baskerville', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.55; margin-bottom: 0.5rem; }
+  .quiz-card .q-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.75rem; line-height: 1.5; }
+  .quiz-options { display: flex; flex-direction: column; gap: 0.75rem; }
+  .quiz-opt {
+    background: var(--cream); border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 1rem 1.25rem; cursor: pointer; text-align: left; width: 100%;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text);
+    transition: all 0.18s; display: flex; align-items: center; gap: 12px;
+  }
+  .quiz-opt:hover { border-color: var(--navy); background: #f0f2f8; }
+  .quiz-opt.selected-yes { border-color: #2a7d4f; background: #f0faf4; color: #1a4a30; }
+  .quiz-opt.selected-no  { border-color: #9b2a2a; background: #fdf3f3; color: #5c1f1f; }
+  .quiz-opt.selected-maybe { border-color: var(--gold); background: #fdf8ee; color: #5a4a1a; }
+  .quiz-opt .opt-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .quiz-opt .opt-text { line-height: 1.4; }
+
+  .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.75rem; }
+  .btn-quiz-back { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; padding: 0.55rem 1.1rem; border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+  .btn-quiz-back:hover { border-color: var(--navy); color: var(--navy); }
+
+  /* Results */
+  .quiz-result { animation: fadeIn 0.4s ease; }
+  .result-verdict { border-radius: 14px; padding: 2rem; margin-bottom: 1.5rem; text-align: center; }
+  .result-verdict.likely    { background: #fdf3f3; border: 2px solid #e8c0c0; }
+  .result-verdict.possible  { background: #fdf8ee; border: 2px solid #e8d5a0; }
+  .result-verdict.unlikely  { background: #f0faf4; border: 2px solid #b7dfc6; }
+  .verdict-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+  .verdict-title { font-family: 'Libre Baskerville', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .result-verdict.likely   .verdict-title { color: var(--red); }
+  .result-verdict.possible .verdict-title { color: #7a5a10; }
+  .result-verdict.unlikely .verdict-title { color: #2a7d4f; }
+  .verdict-desc { font-size: 0.9rem; line-height: 1.65; color: var(--text-muted); max-width: 480px; margin: 0 auto; }
+
+  .quiz-findings { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem; }
+  .quiz-findings h4 { font-family: 'Libre Baskerville', serif; font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+  .finding-item { display: flex; align-items: flex-start; gap: 10px; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .finding-item:last-child { border-bottom: none; }
+  .finding-item .fi-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .finding-item .fi-dot.red    { background: var(--red); }
+  .finding-item .fi-dot.yellow { background: var(--gold); }
+  .finding-item .fi-dot.green  { background: #2a7d4f; }
+  .finding-item .fi-text { color: var(--text-muted); line-height: 1.5; }
+  .finding-item .fi-text strong { color: var(--text); }
+
+  .quiz-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem; }
+  .btn-quiz-cta { flex: 1; min-width: 160px; padding: 0.8rem 1.25rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; text-align: center; }
+  .btn-quiz-cta.primary { background: var(--navy); color: white; }
+  .btn-quiz-cta.primary:hover { background: var(--navy-light); }
+  .btn-quiz-cta.secondary { background: var(--white); color: var(--navy); border: 1.5px solid var(--border); }
+  .btn-quiz-cta.secondary:hover { border-color: var(--navy); }
+  .btn-quiz-restart { background: none; border: none; color: var(--text-muted); font-size: 0.82rem; font-family: 'DM Sans', sans-serif; cursor: pointer; text-decoration: underline; margin-top: 1rem; display: block; }
+  .btn-quiz-restart:hover { color: var(--navy); }
+
+  /* REPORT PAGE */
+  .report-wrap { max-width: 700px; margin: 0 auto; }
+  .report-counter { background: var(--navy); color: white; border-radius: 14px; padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+  .report-counter .rc-num { font-family: 'Libre Baskerville', serif; font-size: 3rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
+  .report-counter .rc-text { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .report-counter .rc-text strong { color: white; display: block; font-size: 1rem; margin-bottom: 2px; }
+  .report-form-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; }
+  .report-form-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .report-form-card .form-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.75rem; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+  .field-group textarea { width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--cream); outline: none; transition: border-color 0.15s; resize: vertical; min-height: 110px; }
+  .field-group textarea:focus { border-color: var(--navy); background: white; }
+  .anon-notice { background: #f0faf4; border: 1px solid #b7dfc6; border-radius: 8px; padding: 0.9rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.8rem; color: #1a4a30; line-height: 1.6; }
+  .btn-submit { width: 100%; background: var(--navy); color: white; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; padding: 0.9rem; cursor: pointer; transition: background 0.15s; margin-top: 0.25rem; }
+  .btn-submit:hover { background: var(--navy-light); }
+  .report-success { display: none; text-align: center; padding: 2.5rem 2rem; }
+  .report-success .s-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .report-success h3 { font-family: 'Libre Baskerville', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
+  .report-success p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
+  .recent-reports { margin-top: 2rem; }
+  .recent-reports h3 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 1rem; }
+  .report-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; display: flex; gap: 14px; align-items: flex-start; animation: fadeIn 0.4s ease; }
+  .report-item .ri-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .report-item .ri-body { flex: 1; }
+  .report-item .ri-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--navy-light); margin-bottom: 3px; }
+  .report-item .ri-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+  .report-item .ri-meta { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; opacity: 0.7; }
+
+  /* MAP PAGE */
+  .map-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+  @media (max-width: 640px) { .map-intro { grid-template-columns: 1fr; } }
+  .map-stat { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
+  .map-stat .ms-num { font-family: 'Libre Baskerville', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); }
+  .map-stat .ms-label { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; margin-top: 3px; }
+  .map-container { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 1.5rem; }
+  .map-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px; }
+  .map-toolbar h3 { font-family: 'Libre Baskerville', serif; font-size: 1rem; color: var(--navy); }
+  .map-legend { display: flex; gap: 14px; flex-wrap: wrap; }
+  .map-legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--text-muted); }
+  .map-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  #fairfax-map { width: 100%; height: 480px; background: #e8eef4; position: relative; overflow: hidden; }
+  .district-label { position: absolute; font-size: 0.65rem; font-weight: 700; color: #1a2744; text-align: center; pointer-events: none; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.3; }
+  .map-tooltip { position: absolute; background: var(--navy); color: white; border-radius: 8px; padding: 0.6rem 0.9rem; font-size: 0.78rem; pointer-events: none; display: none; z-index: 10; max-width: 180px; line-height: 1.4; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+  .map-tooltip strong { display: block; font-size: 0.85rem; margin-bottom: 2px; color: var(--gold-light); }
+  .district-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+  .district-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; cursor: pointer; transition: all 0.15s; }
+  .district-card:hover { border-color: var(--navy); transform: translateY(-1px); }
+  .district-card .dc-name { font-weight: 600; font-size: 0.875rem; color: var(--navy); margin-bottom: 4px; }
+  .district-card .dc-bar-wrap { height: 5px; background: var(--cream-dark, #ede9e0); border-radius: 3px; margin: 6px 0; overflow: hidden; }
+  .district-card .dc-bar { height: 100%; border-radius: 3px; }
+  .district-card .dc-stats { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* hide/show language content */
+  [data-lang] { display: none; }
+  .lang-en [data-lang="en"] { display: revert; }
+  .lang-es [data-lang="es"] { display: revert; }
+  /* for inline elements inside mixed nodes */
+  span[data-lang] { display: none; }
+  .lang-en span[data-lang="en"] { display: inline; }
+  .lang-es span[data-lang="es"] { display: inline; }
+</style>
+</head>
+<body class="lang-en">
+
+<nav>
+  <div class="nav-brand">
+    <span class="dot"></span>
+    <span data-lang="en">Wage Theft Fairfax</span>
+    <span data-lang="es">Robo de Salario Fairfax</span>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li>
+        <button onclick="showPage('understand')" id="tab-understand" class="active">
+          <span data-lang="en">Understanding</span>
+          <span data-lang="es">Entender</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('stats')" id="tab-stats">
+          <span data-lang="en">Statistics</span>
+          <span data-lang="es">Estadísticas</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('testimonials')" id="tab-testimonials">
+          <span data-lang="en">Testimonials</span>
+          <span data-lang="es">Testimonios</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('rights')" id="tab-rights">
+          <span data-lang="en">Know Your Rights</span>
+          <span data-lang="es">Conoce Tus Derechos</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('resources')" id="tab-resources">
+          <span data-lang="en">Resources &amp; Help</span>
+          <span data-lang="es">Recursos y Ayuda</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('calculator')" id="tab-calculator">
+          <span data-lang="en">💰 Calculator</span>
+          <span data-lang="es">💰 Calculadora</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('quiz')" id="tab-quiz">
+          <span data-lang="en">🔍 Quiz</span>
+          <span data-lang="es">🔍 Quiz</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('report')" id="tab-report">
+          <span data-lang="en">📝 Report</span>
+          <span data-lang="es">📝 Reportar</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="showPage('map')" id="tab-map">
+          <span data-lang="en">🗺️ Map</span>
+          <span data-lang="es">🗺️ Mapa</span>
+        </button>
+      </li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE 1: UNDERSTANDING -->
+<div class="page active" id="page-understand">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Fairfax County, Virginia</span>
+      <span data-lang="es">Condado de Fairfax, Virginia</span>
+    </div>
+    <h1>
+      <span data-lang="en">Wage Theft Is More Common Than You Think</span>
+      <span data-lang="es">El Robo de Salario Es Más Común De Lo Que Crees</span>
+    </h1>
+    <p>
+      <span data-lang="en">Millions of workers are robbed of their earnings every year. Learn what wage theft is, how to recognize it, and what rights protect you.</span>
+      <span data-lang="es">Millones de trabajadores son despojados de sus ganancias cada año. Aprende qué es el robo de salario, cómo reconocerlo y qué derechos te protegen.</span>
+    </p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="showPage('stats')">
+        <span data-lang="en">See the Data →</span>
+        <span data-lang="es">Ver los Datos →</span>
+      </button>
+      <button class="btn-outline" onclick="showPage('testimonials')">
+        <span data-lang="en">Read Stories</span>
+        <span data-lang="es">Leer Historias</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <span data-lang="en">What is wage theft?</span>
+      <span data-lang="es">¿Qué es el robo de salario?</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">Wage theft occurs when an employer fails to pay a worker the full wages they've legally earned. It is the single largest form of theft in the United States — exceeding all robberies, burglaries, and larcenies combined.</span>
+      <span data-lang="es">El robo de salario ocurre cuando un empleador no le paga a un trabajador todos los salarios que ha ganado legalmente. Es la forma de robo más grande en los Estados Unidos — mayor que todos los robos, allanamientos y hurtos combinados.</span>
+    </p>
+
+    <div class="def-card">
+      <h3><span class="icon">📋</span>
+        <span data-lang="en">The definition</span>
+        <span data-lang="es">La definición</span>
+      </h3>
+      <p>
+        <span data-lang="en">Wage theft is any practice by which an employer fails to pay workers the wages they are legally owed. It is not always obvious, and it is often illegal under federal, state, and local law — including in Virginia.</span>
+        <span data-lang="es">El robo de salario es cualquier práctica mediante la cual un empleador no paga a los trabajadores los salarios que legalmente se les deben. No siempre es obvio, y con frecuencia es ilegal según las leyes federales, estatales y locales, incluyendo Virginia.</span>
+      </p>
+    </div>
+
+    <div class="def-card">
+      <h3><span class="icon">⚠️</span>
+        <span data-lang="en">Common forms of wage theft</span>
+        <span data-lang="es">Formas comunes de robo de salario</span>
+      </h3>
+      <ul>
+        <li><span data-lang="en">Not paying overtime for hours worked beyond 40 per week</span><span data-lang="es">No pagar horas extras por horas trabajadas más allá de 40 a la semana</span></li>
+        <li><span data-lang="en">Paying less than the minimum wage (Virginia minimum wage: $12.77/hr in 2026)</span><span data-lang="es">Pagar menos del salario mínimo (salario mínimo en Virginia: $12.77/hr en 2026)</span></li>
+        <li><span data-lang="en">Requiring off-the-clock work (before clocking in, after clocking out)</span><span data-lang="es">Exigir trabajo fuera de horario (antes de registrar entrada o después de salida)</span></li>
+        <li><span data-lang="en">Misclassifying employees as "independent contractors" to avoid payroll obligations</span><span data-lang="es">Clasificar incorrectamente a empleados como "contratistas independientes" para evitar obligaciones salariales</span></li>
+        <li><span data-lang="en">Illegal deductions from paychecks for uniforms, equipment, or "breakage"</span><span data-lang="es">Deducciones ilegales del cheque por uniformes, equipo o "daños"</span></li>
+        <li><span data-lang="en">Withholding tips that belong to workers</span><span data-lang="es">Retener propinas que pertenecen a los trabajadores</span></li>
+        <li><span data-lang="en">Failing to pay for final paychecks after termination</span><span data-lang="es">No pagar el cheque final después del despido</span></li>
+        <li><span data-lang="en">Bounced or stopped paychecks</span><span data-lang="es">Cheques rebotados o cheques cancelados</span></li>
+      </ul>
+    </div>
+
+    <div class="alert-box">
+      <p>
+        <span data-lang="en"><strong>Right here in Fairfax County:</strong> In 2025, Fairfax County saw its largest-ever wage theft conviction. The CEO of Chantilly-based SP Global, Inc. was found guilty after failing to pay 42 employees — defrauding them of more than $5 million in wages. He was sentenced to four years in prison. This is not an isolated incident.</span>
+        <span data-lang="es"><strong>Aquí mismo en el Condado de Fairfax:</strong> En 2025, el Condado de Fairfax vivió su condena más grande por robo de salario. El director ejecutivo de SP Global, Inc., con sede en Chantilly, fue declarado culpable por no pagar a 42 empleados, defraudándoles más de $5 millones en salarios. Fue sentenciado a cuatro años de prisión. Este no es un caso aislado.</span>
+      </p>
+    </div>
+
+    <div class="section-heading" style="margin-top:2.5rem;">
+      <span data-lang="en">Who is most at risk?</span>
+      <span data-lang="es">¿Quiénes corren mayor riesgo?</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">Wage theft disproportionately affects workers in certain industries and circumstances, though it can happen to anyone.</span>
+      <span data-lang="es">El robo de salario afecta desproporcionadamente a trabajadores en ciertos sectores y situaciones, aunque puede ocurrirle a cualquier persona.</span>
+    </p>
+
+    <div class="def-card">
+      <p>
+        <span data-lang="en">Workers most vulnerable to wage theft include:</span>
+        <span data-lang="es">Los trabajadores más vulnerables al robo de salario incluyen:</span>
+      </p>
+      <ul style="margin-top:0.75rem;">
+        <li><span data-lang="en">Immigrants and undocumented workers, who may fear retaliation</span><span data-lang="es">Inmigrantes y trabajadores indocumentados, quienes pueden temer represalias</span></li>
+        <li><span data-lang="en">Workers in construction, restaurants, cleaning, and agriculture</span><span data-lang="es">Trabajadores en construcción, restaurantes, limpieza y agricultura</span></li>
+        <li><span data-lang="en">Gig workers and those classified as "independent contractors"</span><span data-lang="es">Trabajadores de plataformas digitales y quienes son clasificados como "contratistas independientes"</span></li>
+        <li><span data-lang="en">Workers earning tips</span><span data-lang="es">Trabajadores que reciben propinas</span></li>
+        <li><span data-lang="en">Workers in low-wage industries with high turnover</span><span data-lang="es">Trabajadores en industrias de bajos salarios con alta rotación</span></li>
+        <li><span data-lang="en">Workers who don't know their legal rights</span><span data-lang="es">Trabajadores que desconocen sus derechos legales</span></li>
+      </ul>
+    </div>
+
+    <div class="section-heading" style="margin-top:2.5rem;">
+      <span data-lang="en">Your rights in Virginia</span>
+      <span data-lang="es">Tus derechos en Virginia</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">Virginia law — including the Virginia Overtime Wage Act and the Virginia Wage Payment Act — gives workers strong protections. You have the right to:</span>
+      <span data-lang="es">La ley de Virginia — incluyendo la Ley de Horas Extra de Virginia y la Ley de Pago de Salarios de Virginia — otorga fuertes protecciones a los trabajadores. Tienes derecho a:</span>
+    </p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="num">01</div>
+        <h4><span data-lang="en">Your full wages</span><span data-lang="es">Tu salario completo</span></h4>
+        <p><span data-lang="en">Receive every dollar you've earned, on time, without illegal deductions.</span><span data-lang="es">Recibir cada dólar que has ganado, a tiempo y sin deducciones ilegales.</span></p>
+      </div>
+      <div class="right-item">
+        <div class="num">02</div>
+        <h4><span data-lang="en">Overtime pay</span><span data-lang="es">Pago de horas extra</span></h4>
+        <p><span data-lang="en">Earn 1.5× your regular rate for all hours worked beyond 40 in a week.</span><span data-lang="es">Ganar 1.5 veces tu tarifa regular por todas las horas trabajadas más de 40 en la semana.</span></p>
+      </div>
+      <div class="right-item">
+        <div class="num">03</div>
+        <h4><span data-lang="en">Recover what's owed</span><span data-lang="es">Recuperar lo que te deben</span></h4>
+        <p><span data-lang="en">Sue your employer and recover wages, 8% interest, and up to triple damages for knowing violations.</span><span data-lang="es">Demandar a tu empleador y recuperar salarios, 8% de interés y hasta el triple de daños por infracciones intencionales.</span></p>
+      </div>
+      <div class="right-item">
+        <div class="num">04</div>
+        <h4><span data-lang="en">Attorney's fees</span><span data-lang="es">Honorarios de abogado</span></h4>
+        <p><span data-lang="en">In cases of knowing violations, Virginia law allows recovery of attorney's fees — so you don't pay out of pocket to fight back.</span><span data-lang="es">En casos de infracciones intencionales, la ley de Virginia permite recuperar los honorarios del abogado, para que no pagues de tu bolsillo.</span></p>
+      </div>
+      <div class="right-item">
+        <div class="num">05</div>
+        <h4><span data-lang="en">Protection from retaliation</span><span data-lang="es">Protección contra represalias</span></h4>
+        <p><span data-lang="en">It is illegal for your employer to fire, demote, or retaliate against you for reporting wage theft.</span><span data-lang="es">Es ilegal que tu empleador te despida, degrade o tome represalias por denunciar el robo de salario.</span></p>
+      </div>
+      <div class="right-item">
+        <div class="num">06</div>
+        <h4><span data-lang="en">Criminal penalties</span><span data-lang="es">Sanciones penales</span></h4>
+        <p><span data-lang="en">Virginia can pursue criminal charges against employers for knowing wage theft — as happened in the 2025 Fairfax case.</span><span data-lang="es">Virginia puede presentar cargos penales contra empleadores por robo de salario intencional, como ocurrió en el caso de Fairfax de 2025.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: STATISTICS -->
+<div class="page" id="page-stats">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Data &amp; Statistics</span>
+      <span data-lang="es">Datos y Estadísticas</span>
+    </div>
+    <h1>
+      <span data-lang="en">The Scale of the Problem</span>
+      <span data-lang="es">La Magnitud del Problema</span>
+    </h1>
+    <p>
+      <span data-lang="en">Wage theft is not rare. The numbers tell a story about how widespread and devastating this crime is — in Fairfax and across the country.</span>
+      <span data-lang="es">El robo de salario no es raro. Las cifras cuentan la historia de qué tan extendido y devastador es este delito — en Fairfax y en todo el país.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <span data-lang="en">By the numbers</span>
+      <span data-lang="es">En cifras</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">These figures represent a fraction of the full picture — most wage theft goes unreported.</span>
+      <span data-lang="es">Estas cifras representan una fracción del panorama completo — la mayoría del robo de salario no se denuncia.</span>
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">$50B+</div>
+        <div class="label"><span data-lang="en">Stolen from U.S. workers annually via wage theft</span><span data-lang="es">Robados a trabajadores estadounidenses anualmente por robo de salario</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="num">$5M+</div>
+        <div class="label"><span data-lang="en">Wages stolen from 42 Fairfax workers by SP Global (2020–2025)</span><span data-lang="es">Salarios robados a 42 trabajadores de Fairfax por SP Global (2020–2025)</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="num">$12.77</div>
+        <div class="label"><span data-lang="en">Virginia minimum wage per hour in 2026</span><span data-lang="es">Salario mínimo de Virginia por hora en 2026</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="num">629K</div>
+        <div class="label"><span data-lang="en">Workers employed in Fairfax County (2025)</span><span data-lang="es">Trabajadores empleados en el Condado de Fairfax (2025)</span></div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3><span data-lang="en">Common forms of wage theft — reported frequency</span><span data-lang="es">Formas comunes de robo de salario — frecuencia reportada</span></h3>
+      <div class="chart-sub"><span data-lang="en">Based on national studies of low-wage workers. Percentages reflect workers who reported each violation.</span><span data-lang="es">Basado en estudios nacionales de trabajadores de bajos salarios. Los porcentajes reflejan trabajadores que reportaron cada violación.</span></div>
+      <div class="chart-wrap" style="height:300px;">
+        <canvas id="chart1" role="img" aria-label="Bar chart showing common forms of wage theft by reported frequency">Minimum wage violations 26%, overtime violations 19%, off-the-clock work 17%, illegal deductions 12%, tip theft 9%, meal break denial 7%.</canvas>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3><span data-lang="en">Industries most affected in Northern Virginia</span><span data-lang="es">Industrias más afectadas en el Norte de Virginia</span></h3>
+      <div class="chart-sub"><span data-lang="en">Industries where wage theft complaints are most concentrated in the greater Fairfax area.</span><span data-lang="es">Industrias donde las quejas por robo de salario son más frecuentes en el área de Fairfax.</span></div>
+      <div class="chart-wrap" style="height:280px;">
+        <canvas id="chart2" role="img" aria-label="Horizontal bar chart of industries with most wage theft complaints in Northern Virginia">Construction 32%, food service 24%, domestic work 18%, retail 14%, agriculture 8%, other 4%.</canvas>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3><span data-lang="en">Who bears the burden</span><span data-lang="es">Quién carga con el peso</span></h3>
+      <div class="chart-sub"><span data-lang="en">Workers most impacted by wage theft nationally, as a share of reported violations.</span><span data-lang="es">Trabajadores más afectados por el robo de salario a nivel nacional, como proporción de las violaciones reportadas.</span></div>
+      <div id="legend2" style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px;font-size:12px;color:var(--text-muted);"></div>
+      <div class="chart-wrap" style="height:260px;">
+        <canvas id="chart3" role="img" aria-label="Pie chart of workers most impacted by wage theft">Immigrant workers 38%, workers of color 29%, women 20%, young workers 13%.</canvas>
+      </div>
+    </div>
+
+    <div class="alert-box" style="margin-top:2rem;">
+      <p>
+        <span data-lang="en"><strong>Note on these figures:</strong> The data shown combines national statistics, regional estimates, and documented Fairfax County cases. Actual rates of wage theft are significantly higher — most incidents go unreported due to fear of job loss, immigration status, or lack of awareness of legal rights.</span>
+        <span data-lang="es"><strong>Nota sobre estas cifras:</strong> Los datos presentados combinan estadísticas nacionales, estimaciones regionales y casos documentados del Condado de Fairfax. Las tasas reales de robo de salario son significativamente más altas — la mayoría de los incidentes no se denuncian por miedo a perder el empleo, estatus migratorio o desconocimiento de los derechos legales.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: TESTIMONIALS -->
+<div class="page" id="page-testimonials">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Worker Stories</span>
+      <span data-lang="es">Historias de Trabajadores</span>
+    </div>
+    <h1>
+      <span data-lang="en">Real Voices From Our Community</span>
+      <span data-lang="es">Voces Reales De Nuestra Comunidad</span>
+    </h1>
+    <p>
+      <span data-lang="en">Behind every statistic is a person. These are composites and illustrative accounts based on common wage theft experiences in Fairfax County.</span>
+      <span data-lang="es">Detrás de cada estadística hay una persona. Estas son historias compuestas e ilustrativas basadas en experiencias comunes de robo de salario en el Condado de Fairfax.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <span data-lang="en">Their stories</span>
+      <span data-lang="es">Sus historias</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">These accounts represent the kinds of experiences workers across Fairfax County have faced. Names and identifying details have been changed to protect privacy.</span>
+      <span data-lang="es">Estas historias representan el tipo de experiencias que han vivido trabajadores en todo el Condado de Fairfax. Los nombres y datos identificativos han sido cambiados para proteger la privacidad.</span>
+    </p>
+
+    <div class="testimonial-card">
+      <blockquote>
+        <span data-lang="en">"I worked for a construction company in Reston for two years. They kept calling me an 'independent contractor' but I had no control over my hours, my tools, or my clients. When I was hurt on the job, they refused to file a workers' comp claim — and I found out I'd been denied overtime the whole time. I was owed thousands of dollars."</span>
+        <span data-lang="es">"Trabajé para una empresa de construcción en Reston durante dos años. Siempre me llamaban 'contratista independiente', pero yo no tenía control sobre mis horarios, mis herramientas ni mis clientes. Cuando me lastimé en el trabajo, se negaron a presentar una reclamación de compensación laboral — y descubrí que me habían negado las horas extras todo el tiempo. Me debían miles de dólares."</span>
+      </blockquote>
+      <div class="testimonial-footer">
+        <div class="avatar">MR</div>
+        <div class="testimonial-meta">
+          <div class="name">Miguel R.</div>
+          <div class="detail"><span data-lang="en">Construction worker, Reston area</span><span data-lang="es">Trabajador de construcción, área de Reston</span></div>
+        </div>
+        <div class="tag"><span data-lang="en">Misclassification</span><span data-lang="es">Clasificación errónea</span></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>
+        <span data-lang="en">"My manager at the restaurant would tell us to clock out and keep working — 'just help us close up.' It was every single weekend. When I finally added it all up over a year, they had stolen over $3,000 in wages from me. I didn't report it at first because I was afraid of losing my job. I wish I had spoken up sooner."</span>
+        <span data-lang="es">"Mi gerente en el restaurante nos decía que marcáramos la salida y siguiéramos trabajando — 'solo ayúdanos a cerrar'. Era todos los fines de semana. Cuando finalmente lo sumé durante un año, me habían robado más de $3,000 en salarios. Al principio no lo denuncié porque tenía miedo de perder mi trabajo. Ojalá hubiera hablado antes."</span>
+      </blockquote>
+      <div class="testimonial-footer">
+        <div class="avatar">JL</div>
+        <div class="testimonial-meta">
+          <div class="name">Jennifer L.</div>
+          <div class="detail"><span data-lang="en">Restaurant server, Fairfax City</span><span data-lang="es">Mesera de restaurante, Fairfax City</span></div>
+        </div>
+        <div class="tag"><span data-lang="en">Off-the-clock work</span><span data-lang="es">Trabajo sin registro</span></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>
+        <span data-lang="en">"I cleaned houses in McLean for five years. My employer started making deductions from my paycheck for 'supplies' and 'transportation' — things I never agreed to. Some weeks I was taking home less than minimum wage. I didn't know it was illegal. A neighbor finally told me I could report it to the state labor board."</span>
+        <span data-lang="es">"Limpié casas en McLean durante cinco años. Mi empleador empezó a hacer deducciones de mi cheque por 'suministros' y 'transporte' — cosas que yo nunca acordé. Algunas semanas llevaba a casa menos del salario mínimo. No sabía que era ilegal. Una vecina finalmente me dijo que podía denunciarlo ante la junta laboral estatal."</span>
+      </blockquote>
+      <div class="testimonial-footer">
+        <div class="avatar">ET</div>
+        <div class="testimonial-meta">
+          <div class="name">Elena T.</div>
+          <div class="detail"><span data-lang="en">Domestic worker, McLean</span><span data-lang="es">Trabajadora doméstica, McLean</span></div>
+        </div>
+        <div class="tag"><span data-lang="en">Illegal deductions</span><span data-lang="es">Deducciones ilegales</span></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>
+        <span data-lang="en">"Our company stopped paying us in October 2020. The CEO kept promising the payments were coming — 'just a few more weeks.' I went four months without a paycheck. I had to borrow money from family to pay rent. It wasn't until the Commonwealth's Attorney got involved that we finally saw any justice."</span>
+        <span data-lang="es">"Nuestra empresa dejó de pagarnos en octubre de 2020. El director ejecutivo seguía prometiendo que los pagos llegarían — 'solo unas semanas más'. Estuve cuatro meses sin cheque de pago. Tuve que pedirle dinero prestado a la familia para pagar el alquiler. No fue hasta que intervino el Fiscal del Estado que finalmente vimos algo de justicia."</span>
+      </blockquote>
+      <div class="testimonial-footer">
+        <div class="avatar">DK</div>
+        <div class="testimonial-meta">
+          <div class="name">David K.</div>
+          <div class="detail"><span data-lang="en">IT contractor, Chantilly — SP Global case</span><span data-lang="es">Contratista de TI, Chantilly — caso SP Global</span></div>
+        </div>
+        <div class="tag"><span data-lang="en">Withheld wages</span><span data-lang="es">Salarios retenidos</span></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>
+        <span data-lang="en">"I worked weekends on top of my 40-hour week for months. My employer said I was 'salaried' so overtime didn't apply. But I looked it up and Virginia law still protects salaried workers below a certain threshold. I was entitled to overtime pay the whole time. The laws are on your side — you just have to know them."</span>
+        <span data-lang="es">"Trabajé los fines de semana además de mis 40 horas semanales durante meses. Mi empleador decía que yo era 'asalariada' y por eso no aplicaban las horas extras. Pero lo investigué y la ley de Virginia aún protege a los trabajadores asalariados por debajo de cierto umbral. Tenía derecho al pago de horas extras todo el tiempo. Las leyes están de tu lado — solo tienes que conocerlas."</span>
+      </blockquote>
+      <div class="testimonial-footer">
+        <div class="avatar">AS</div>
+        <div class="testimonial-meta">
+          <div class="name">Amara S.</div>
+          <div class="detail"><span data-lang="en">Retail manager, Annandale</span><span data-lang="es">Gerente de tienda, Annandale</span></div>
+        </div>
+        <div class="tag"><span data-lang="en">Overtime theft</span><span data-lang="es">Robo de horas extra</span></div>
+      </div>
+    </div>
+
+    <div class="share-note">
+      <h3>
+        <span data-lang="en">Have you experienced wage theft?</span>
+        <span data-lang="es">¿Has sufrido robo de salario?</span>
+      </h3>
+      <p>
+        <span data-lang="en">You are not alone. If your employer has failed to pay you what you're owed, you have options. Virginia law gives you the right to recover your wages — and in many cases, more.</span>
+        <span data-lang="es">No estás solo/a. Si tu empleador no te ha pagado lo que te debe, tienes opciones. La ley de Virginia te da el derecho de recuperar tu salario — y en muchos casos, más.</span>
+      </p>
+      <p style="margin-bottom:0; font-size:0.82rem; opacity:0.7;">
+        <span data-lang="en">Contact the Virginia Department of Labor and Industry · (804) 371-2327 · doli.virginia.gov</span>
+        <span data-lang="es">Contacta al Departamento de Trabajo e Industria de Virginia · (804) 371-2327 · doli.virginia.gov</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: KNOW YOUR RIGHTS -->
+<div class="page" id="page-rights">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Legal Protections</span>
+      <span data-lang="es">Protecciones Legales</span>
+    </div>
+    <h1>
+      <span data-lang="en">Know Your Rights as a Worker</span>
+      <span data-lang="es">Conoce Tus Derechos Como Trabajador</span>
+    </h1>
+    <p>
+      <span data-lang="en">Virginia and federal law give workers powerful tools to fight back against wage theft. Here's what the law says — in plain language.</span>
+      <span data-lang="es">Las leyes de Virginia y federales otorgan a los trabajadores herramientas poderosas para combatir el robo de salario. Esto es lo que dice la ley — en lenguaje sencillo.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <span data-lang="en">Your rights, explained</span>
+      <span data-lang="es">Tus derechos, explicados</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">Click any topic to learn more. These rights apply to most workers in Virginia, regardless of immigration status.</span>
+      <span data-lang="es">Haz clic en cualquier tema para saber más. Estos derechos aplican a la mayoría de los trabajadores en Virginia, independientemente del estatus migratorio.</span>
+    </p>
+
+    <div class="rights-accordion">
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">💰 Minimum Wage</span><span data-lang="es">💰 Salario Mínimo</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Virginia Minimum Wage Act</span><span data-lang="es">Ley de Salario Mínimo de Virginia</span></div>
+            <p><span data-lang="en">As of January 1, 2026, the Virginia minimum wage is <strong>$12.77 per hour</strong>. Your employer must pay you at least this amount for every hour you work. If your employer pays you less — even by a few cents — that is wage theft.</span><span data-lang="es">A partir del 1 de enero de 2026, el salario mínimo de Virginia es <strong>$12.77 por hora</strong>. Tu empleador debe pagarte al menos esta cantidad por cada hora trabajada. Si te paga menos — aunque sea unos centavos — eso es robo de salario.</span></p>
+            <ul>
+              <li><span data-lang="en">Tipped workers must still receive at least $12.77/hr when tips are included</span><span data-lang="es">Los trabajadores que reciben propinas aún deben recibir al menos $12.77/hr incluyendo propinas</span></li>
+              <li><span data-lang="en">There is no "training wage" exception for adult workers</span><span data-lang="es">No existe excepción de "salario de entrenamiento" para trabajadores adultos</span></li>
+              <li><span data-lang="en">You can recover up to 3 years of unpaid minimum wages</span><span data-lang="es">Puedes recuperar hasta 3 años de salarios mínimos no pagados</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">⏰ Overtime Pay</span><span data-lang="es">⏰ Pago de Horas Extra</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Virginia Overtime Wage Act (VOWA)</span><span data-lang="es">Ley de Horas Extra de Virginia (VOWA)</span></div>
+            <p><span data-lang="en">If you work more than 40 hours in a single workweek, you are entitled to <strong>1.5 times your regular rate of pay</strong> for every hour over 40. This applies to most hourly and many salaried workers.</span><span data-lang="es">Si trabajas más de 40 horas en una semana laboral, tienes derecho a <strong>1.5 veces tu tarifa regular</strong> por cada hora que exceda las 40. Esto aplica a la mayoría de trabajadores por hora y a muchos asalariados.</span></p>
+            <ul>
+              <li><span data-lang="en">Being paid "salary" does not automatically disqualify you from overtime</span><span data-lang="es">Ser pagado como "asalariado" no te descalifica automáticamente de las horas extra</span></li>
+              <li><span data-lang="en">Employers cannot average hours across two weeks to avoid overtime</span><span data-lang="es">Los empleadores no pueden promediar horas de dos semanas para evitar el pago de horas extra</span></li>
+              <li><span data-lang="en">Violations carry double damages plus attorney fees under VOWA</span><span data-lang="es">Las violaciones conllevan el doble de daños más honorarios legales bajo VOWA</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">🛡️ Protection from Retaliation</span><span data-lang="es">🛡️ Protección Contra Represalias</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Virginia Wage Payment Act</span><span data-lang="es">Ley de Pago de Salarios de Virginia</span></div>
+            <p><span data-lang="en">It is <strong>illegal for your employer to retaliate</strong> against you for complaining about wage theft, filing a complaint with a government agency, or cooperating in an investigation. Retaliation includes firing, demotion, reduced hours, or any negative change in your job conditions.</span><span data-lang="es">Es <strong>ilegal que tu empleador tome represalias</strong> contra ti por quejarte del robo de salario, presentar una queja ante una agencia gubernamental o cooperar en una investigación. Las represalias incluyen despido, degradación, reducción de horas o cualquier cambio negativo en tus condiciones laborales.</span></p>
+            <ul>
+              <li><span data-lang="en">You can sue for retaliation damages separately from your wage claim</span><span data-lang="es">Puedes demandar por daños por represalia separados de tu reclamación salarial</span></li>
+              <li><span data-lang="en">These protections apply even if your wage claim is ultimately unsuccessful</span><span data-lang="es">Estas protecciones aplican incluso si tu reclamación salarial no tiene éxito</span></li>
+              <li><span data-lang="en">Threats or intimidation by an employer are also illegal</span><span data-lang="es">Las amenazas o intimidación por parte del empleador también son ilegales</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">📄 Right to Pay Records</span><span data-lang="es">📄 Derecho a Registros de Pago</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Virginia Code § 40.1-29</span><span data-lang="es">Código de Virginia § 40.1-29</span></div>
+            <p><span data-lang="en">Your employer is required to provide you with a <strong>written statement of earnings and deductions</strong> with every paycheck. They must also keep accurate records of hours worked and wages paid for at least three years.</span><span data-lang="es">Tu empleador está obligado a proporcionarte un <strong>estado escrito de ganancias y deducciones</strong> con cada cheque de pago. También debe mantener registros precisos de las horas trabajadas y los salarios pagados durante al menos tres años.</span></p>
+            <ul>
+              <li><span data-lang="en">You can request copies of your pay records at any time</span><span data-lang="es">Puedes solicitar copias de tus registros de pago en cualquier momento</span></li>
+              <li><span data-lang="en">Keep your own records: save pay stubs, timesheets, and any written agreements</span><span data-lang="es">Guarda tus propios registros: conserva talones de pago, hojas de tiempo y cualquier acuerdo escrito</span></li>
+              <li><span data-lang="en">Refusing to provide records is a red flag — and may itself be a violation</span><span data-lang="es">Negarse a proporcionar registros es una señal de alerta — y puede ser una violación en sí misma</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">🌐 Immigration Status &amp; Your Rights</span><span data-lang="es">🌐 Estatus Migratorio y Tus Derechos</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Federal &amp; Virginia Law</span><span data-lang="es">Ley Federal y de Virginia</span></div>
+            <p><span data-lang="en"><strong>Your immigration status does not affect your right to be paid.</strong> Undocumented workers are still entitled to minimum wage, overtime, and protection from retaliation under both federal and Virginia law. Employers who threaten to report workers to immigration authorities as a way to suppress a wage complaint may face additional criminal charges.</span><span data-lang="es"><strong>Tu estatus migratorio no afecta tu derecho a ser pagado.</strong> Los trabajadores indocumentados también tienen derecho al salario mínimo, horas extra y protección contra represalias bajo la ley federal y de Virginia. Los empleadores que amenacen con reportar a trabajadores a las autoridades de inmigración para suprimir una queja salarial pueden enfrentar cargos criminales adicionales.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <span class="acc-title"><span data-lang="en">⚖️ What You Can Recover</span><span data-lang="es">⚖️ Qué Puedes Recuperar</span></span>
+          <span class="acc-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="law-badge"><span data-lang="en">Virginia Wage Payment Act &amp; VOWA</span><span data-lang="es">Ley de Pago de Salarios de Virginia y VOWA</span></div>
+            <p><span data-lang="en">If you win a wage theft claim in Virginia, you may be entitled to:</span><span data-lang="es">Si ganas una reclamación por robo de salario en Virginia, puedes tener derecho a:</span></p>
+            <ul>
+              <li><span data-lang="en">All unpaid wages owed</span><span data-lang="es">Todos los salarios no pagados que se te deben</span></li>
+              <li><span data-lang="en">8% annual interest on unpaid wages</span><span data-lang="es">8% de interés anual sobre los salarios no pagados</span></li>
+              <li><span data-lang="en">Up to triple (3×) damages for knowing or intentional violations</span><span data-lang="es">Hasta el triple (3×) de daños por violaciones intencionales o deliberadas</span></li>
+              <li><span data-lang="en">Attorney's fees and court costs paid by the employer</span><span data-lang="es">Honorarios de abogado y costas judiciales pagadas por el empleador</span></li>
+              <li><span data-lang="en">Up to 3 years of back wages</span><span data-lang="es">Hasta 3 años de salarios atrasados</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="green-box">
+      <p><strong><span data-lang="en">Statute of limitations:</span><span data-lang="es">Plazo de prescripción:</span></strong> <span data-lang="en">You generally have <strong>3 years</strong> from the date wages were due to file a claim under Virginia law. Don't wait — the sooner you act, the more wages you can recover.</span><span data-lang="es">Por lo general tienes <strong>3 años</strong> a partir de la fecha en que los salarios debían pagarse para presentar una reclamación bajo la ley de Virginia. No esperes — cuanto antes actúes, más salarios puedes recuperar.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: RESOURCES & HELP -->
+<div class="page" id="page-resources">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Resources &amp; Help</span>
+      <span data-lang="es">Recursos y Ayuda</span>
+    </div>
+    <h1>
+      <span data-lang="en">Where to Get Help</span>
+      <span data-lang="es">Dónde Obtener Ayuda</span>
+    </h1>
+    <p>
+      <span data-lang="en">You don't have to face this alone. These organizations and agencies can help you report wage theft, understand your rights, and recover what you're owed.</span>
+      <span data-lang="es">No tienes que enfrentarte a esto solo/a. Estas organizaciones y agencias pueden ayudarte a denunciar el robo de salario, entender tus derechos y recuperar lo que te deben.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <span data-lang="en">Government agencies</span>
+      <span data-lang="es">Agencias gubernamentales</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">These agencies investigate wage theft complaints and can take action against your employer at no cost to you.</span>
+      <span data-lang="es">Estas agencias investigan quejas de robo de salario y pueden actuar contra tu empleador sin costo para ti.</span>
+    </p>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="rc-icon">🏛️</div>
+        <h4><span data-lang="en">Virginia Dept. of Labor &amp; Industry (DOLI)</span><span data-lang="es">Departamento de Trabajo e Industria de Virginia (DOLI)</span></h4>
+        <p><span data-lang="en">Enforces Virginia wage laws. File a complaint online or by phone. Investigations are free and confidential.</span><span data-lang="es">Hace cumplir las leyes salariales de Virginia. Presenta una queja en línea o por teléfono. Las investigaciones son gratuitas y confidenciales.</span></p>
+        <div class="phone">📞 (804) 371-2327</div>
+        <a href="https://www.doli.virginia.gov/labor-law/file-a-complaint/" target="_blank">doli.virginia.gov →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">🇺🇸</div>
+        <h4><span data-lang="en">U.S. Dept. of Labor — Wage &amp; Hour Division</span><span data-lang="es">Departamento de Trabajo de EE.UU. — División de Horas y Salarios</span></h4>
+        <p><span data-lang="en">Enforces federal wage laws including the Fair Labor Standards Act (FLSA). Free investigations, regardless of immigration status.</span><span data-lang="es">Hace cumplir las leyes salariales federales incluyendo la FLSA. Investigaciones gratuitas, independientemente del estatus migratorio.</span></p>
+        <div class="phone">📞 1-866-487-9243</div>
+        <a href="https://www.dol.gov/agencies/whd" target="_blank">dol.gov/agencies/whd →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">⚖️</div>
+        <h4><span data-lang="en">Fairfax County Commonwealth's Attorney</span><span data-lang="es">Fiscal del Estado del Condado de Fairfax</span></h4>
+        <p><span data-lang="en">For serious or criminal wage theft cases (like the 2025 SP Global conviction). Can pursue criminal charges against employers.</span><span data-lang="es">Para casos graves o criminales de robo de salario (como la condena de SP Global en 2025). Puede presentar cargos penales contra los empleadores.</span></p>
+        <div class="phone">📞 (703) 246-2776</div>
+        <a href="https://www.fairfaxcounty.gov/courts/commonwealths-attorney" target="_blank">fairfaxcounty.gov →</a>
+      </div>
+    </div>
+
+    <div class="section-heading" style="margin-top:2.5rem;">
+      <span data-lang="en">Legal aid &amp; nonprofits</span>
+      <span data-lang="es">Ayuda legal y organizaciones sin fines de lucro</span>
+    </div>
+    <div class="divider"></div>
+    <p class="section-sub">
+      <span data-lang="en">These organizations provide free or low-cost legal help to workers, including those who are undocumented.</span>
+      <span data-lang="es">Estas organizaciones brindan ayuda legal gratuita o de bajo costo a trabajadores, incluidos quienes son indocumentados.</span>
+    </p>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="rc-icon">🤝</div>
+        <h4><span data-lang="en">Legal Aid Justice Center</span><span data-lang="es">Centro de Justicia de Ayuda Legal</span></h4>
+        <p><span data-lang="en">Provides free legal representation to low-income workers in Northern Virginia. Has a dedicated worker rights unit specializing in wage theft.</span><span data-lang="es">Proporciona representación legal gratuita a trabajadores de bajos ingresos en el Norte de Virginia. Tiene una unidad dedicada a derechos laborales especializada en robo de salario.</span></p>
+        <div class="phone">📞 (703) 778-3450</div>
+        <a href="https://www.justice4all.org" target="_blank">justice4all.org →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">🌱</div>
+        <h4><span data-lang="en">CASA Northern Virginia</span><span data-lang="es">CASA Norte de Virginia</span></h4>
+        <p><span data-lang="en">Immigrant-led organization providing worker education, legal resources, and advocacy. Offers services in Spanish and English.</span><span data-lang="es">Organización liderada por inmigrantes que brinda educación laboral, recursos legales y defensa. Ofrece servicios en español e inglés.</span></p>
+        <div class="phone">📞 (703) 778-0400</div>
+        <a href="https://wearecasa.org" target="_blank">wearecasa.org →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">🏠</div>
+        <h4><span data-lang="en">Ayuda</span><span data-lang="es">Ayuda</span></h4>
+        <p><span data-lang="en">Serves the Latino and immigrant community in the DC metro area with legal services, including employment and wage issues.</span><span data-lang="es">Sirve a la comunidad latina e inmigrante en el área metropolitana de DC con servicios legales, incluidos asuntos de empleo y salarios.</span></p>
+        <div class="phone">📞 (301) 563-6700</div>
+        <a href="https://www.ayuda.com" target="_blank">ayuda.com →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">📋</div>
+        <h4><span data-lang="en">Virginia Employment Commission</span><span data-lang="es">Comisión de Empleo de Virginia</span></h4>
+        <p><span data-lang="en">Can assist with resolving certain wage disputes and provides information on worker rights and employer obligations.</span><span data-lang="es">Puede ayudar a resolver ciertos conflictos salariales y brinda información sobre derechos de los trabajadores y obligaciones de los empleadores.</span></p>
+        <div class="phone">📞 (866) 832-2363</div>
+        <a href="https://www.vec.virginia.gov" target="_blank">vec.virginia.gov →</a>
+      </div>
+    </div>
+
+    <div class="section-heading" style="margin-top:2.5rem;">
+      <span data-lang="en">How to file a complaint — step by step</span>
+      <span data-lang="es">Cómo presentar una queja — paso a paso</span>
+    </div>
+    <div class="divider"></div>
+
+    <div class="step-list">
+      <div class="step-item">
+        <h4><span data-lang="en">Document everything</span><span data-lang="es">Documenta todo</span></h4>
+        <p><span data-lang="en">Gather pay stubs, timesheets, text messages, emails, or any records showing hours worked and pay received. Write down dates, amounts, and what was said to you.</span><span data-lang="es">Reúne talones de pago, hojas de tiempo, mensajes de texto, correos electrónicos o cualquier registro que muestre las horas trabajadas y el pago recibido. Anota fechas, montos y lo que te dijeron.</span></p>
+      </div>
+      <div class="step-item">
+        <h4><span data-lang="en">Calculate what you're owed</span><span data-lang="es">Calcula lo que te deben</span></h4>
+        <p><span data-lang="en">Estimate the total wages stolen — include unpaid hours, missing overtime, and any illegal deductions. Even rough estimates are helpful when you start your claim.</span><span data-lang="es">Calcula el total de salarios robados — incluye horas no pagadas, horas extra faltantes y cualquier deducción ilegal. Incluso estimaciones aproximadas son útiles al comenzar tu reclamación.</span></p>
+      </div>
+      <div class="step-item">
+        <h4><span data-lang="en">Contact an agency or attorney</span><span data-lang="es">Contacta a una agencia o abogado</span></h4>
+        <p><span data-lang="en">File a complaint with DOLI or the U.S. Department of Labor, or contact a legal aid organization. You can also hire a private attorney — many work on contingency (no upfront cost).</span><span data-lang="es">Presenta una queja ante DOLI o el Departamento de Trabajo de EE.UU., o contacta a una organización de ayuda legal. También puedes contratar a un abogado privado — muchos trabajan en contingencia (sin costo inicial).</span></p>
+      </div>
+      <div class="step-item">
+        <h4><span data-lang="en">Know your deadlines</span><span data-lang="es">Conoce tus plazos</span></h4>
+        <p><span data-lang="en">Virginia law gives you 3 years to file most wage claims. Federal FLSA claims have a 2-year deadline (3 years for willful violations). Don't delay — the clock starts from when wages were due.</span><span data-lang="es">La ley de Virginia te da 3 años para presentar la mayoría de las reclamaciones salariales. Las reclamaciones federales bajo FLSA tienen un plazo de 2 años (3 años para violaciones intencionales). No demores — el reloj comienza desde cuando los salarios debían pagarse.</span></p>
+      </div>
+      <div class="step-item">
+        <h4><span data-lang="en">Report retaliation immediately</span><span data-lang="es">Reporta las represalias de inmediato</span></h4>
+        <p><span data-lang="en">If your employer retaliates after you file a complaint, report it immediately to the same agency or your attorney. Retaliation is a separate legal violation and strengthens your case.</span><span data-lang="es">Si tu empleador toma represalias después de que presentes una queja, repórtalo de inmediato a la misma agencia o a tu abogado. Las represalias son una violación legal separada y fortalecen tu caso.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 6: WAGE THEFT CALCULATOR -->
+<div class="page" id="page-calculator">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Free Tool</span>
+      <span data-lang="es">Herramienta Gratuita</span>
+    </div>
+    <h1>
+      <span data-lang="en">How Much Were You Stolen From?</span>
+      <span data-lang="es">¿Cuánto Te Robaron?</span>
+    </h1>
+    <p>
+      <span data-lang="en">Enter your work details below to estimate how much your employer may owe you — including overtime, back pay, interest, and damages.</span>
+      <span data-lang="es">Ingresa los detalles de tu trabajo para estimar cuánto podría deberte tu empleador — incluyendo horas extra, pago atrasado, intereses y daños.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="calc-wrap">
+
+      <!-- LEFT: FORM -->
+      <div class="calc-form">
+        <h3>
+          <span data-lang="en">Enter your work details</span>
+          <span data-lang="es">Ingresa los detalles de tu trabajo</span>
+        </h3>
+
+        <div class="field-group">
+          <label><span data-lang="en">Hourly pay rate (what you were actually paid)</span><span data-lang="es">Tarifa de pago por hora (lo que realmente te pagaron)</span></label>
+          <input type="number" id="c-rate" min="0" step="0.01" placeholder="e.g. 12.00" oninput="calcUpdate()">
+          <div class="field-hint"><span data-lang="en">Virginia minimum wage in 2026: $12.77/hr</span><span data-lang="es">Salario mínimo de Virginia en 2026: $12.77/hr</span></div>
+        </div>
+
+        <div class="field-group">
+          <label><span data-lang="en">Average hours worked per week</span><span data-lang="es">Promedio de horas trabajadas por semana</span></label>
+          <input type="number" id="c-hours" min="0" max="168" step="0.5" placeholder="e.g. 48" oninput="calcUpdate()">
+        </div>
+
+        <div class="field-group">
+          <label><span data-lang="en">Number of weeks this occurred</span><span data-lang="es">Número de semanas que ocurrió esto</span></label>
+          <input type="number" id="c-weeks" min="1" max="156" step="1" placeholder="e.g. 52" oninput="calcUpdate()">
+          <div class="field-hint"><span data-lang="en">Virginia law allows claims up to 3 years back (≈ 156 weeks)</span><span data-lang="es">La ley de Virginia permite reclamaciones hasta 3 años atrás (≈ 156 semanas)</span></div>
+        </div>
+
+        <hr class="calc-divider">
+
+        <div class="field-group">
+          <label><span data-lang="en">What types of wage theft occurred?</span><span data-lang="es">¿Qué tipos de robo de salario ocurrieron?</span></label>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="c-minwage" onchange="calcUpdate()">
+            <label for="c-minwage"><span data-lang="en">Paid below minimum wage ($12.77/hr)</span><span data-lang="es">Pagado por debajo del salario mínimo ($12.77/hr)</span></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="c-overtime" onchange="calcUpdate()">
+            <label for="c-overtime"><span data-lang="en">Overtime denied (worked more than 40 hrs/week)</span><span data-lang="es">Horas extra negadas (trabajé más de 40 hrs/semana)</span></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="c-offclock" onchange="calcUpdate()">
+            <label for="c-offclock"><span data-lang="en">Off-the-clock work (unpaid time before/after shift)</span><span data-lang="es">Trabajo fuera de horario (tiempo no pagado antes/después del turno)</span></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="c-deductions" onchange="calcUpdate()">
+            <label for="c-deductions"><span data-lang="en">Illegal paycheck deductions</span><span data-lang="es">Deducciones ilegales del cheque</span></label>
+          </div>
+        </div>
+
+        <div class="field-group" id="offclock-field" style="display:none;">
+          <label><span data-lang="en">Unpaid off-the-clock hours per week</span><span data-lang="es">Horas no pagadas fuera de horario por semana</span></label>
+          <input type="number" id="c-offhours" min="0" step="0.5" placeholder="e.g. 3" oninput="calcUpdate()">
+        </div>
+
+        <div class="field-group" id="deductions-field" style="display:none;">
+          <label><span data-lang="en">Total illegal deductions taken</span><span data-lang="es">Total de deducciones ilegales realizadas</span></label>
+          <input type="number" id="c-dedamt" min="0" step="1" placeholder="e.g. 500" oninput="calcUpdate()">
+        </div>
+
+        <hr class="calc-divider">
+
+        <div class="field-group">
+          <label><span data-lang="en">Was this intentional / knowing violation?</span><span data-lang="es">¿Fue esto una violación intencional / deliberada?</span></label>
+          <select id="c-intent" onchange="calcUpdate()">
+            <option value="unknown"><span data-lang="en">Not sure</span></option>
+            <option value="yes"><span data-lang="en">Yes — employer knew and did it anyway</span></option>
+            <option value="no"><span data-lang="en">No — may have been accidental</span></option>
+          </select>
+          <div class="field-hint"><span data-lang="en">Intentional violations can triple your damages under Virginia law</span><span data-lang="es">Las violaciones intencionales pueden triplicar tus daños bajo la ley de Virginia</span></div>
+        </div>
+
+        <button class="btn-reset" onclick="calcReset()">
+          <span data-lang="en">Reset calculator</span>
+          <span data-lang="es">Reiniciar calculadora</span>
+        </button>
+      </div>
+
+      <!-- RIGHT: RESULTS -->
+      <div class="calc-results" id="calc-results-panel">
+        <div class="result-placeholder" id="calc-placeholder">
+          <div class="ph-icon">🧮</div>
+          <p>
+            <span data-lang="en">Fill in your details on the left and your estimated recovery will appear here.</span>
+            <span data-lang="es">Completa los detalles a la izquierda y tu estimación de recuperación aparecerá aquí.</span>
+          </p>
+        </div>
+
+        <div id="calc-output" style="display:none;">
+          <div class="result-card">
+            <div class="result-label">
+              <span data-lang="en">Estimated amount owed to you</span>
+              <span data-lang="es">Monto estimado que te deben</span>
+            </div>
+            <div class="result-amount" id="r-total">$0</div>
+            <div class="result-sub" id="r-sub"></div>
+          </div>
+
+          <div class="result-breakdown">
+            <h4>
+              <span data-lang="en">Breakdown</span>
+              <span data-lang="es">Desglose</span>
+            </h4>
+            <div class="breakdown-row" id="br-unpaid" style="display:none;">
+              <span class="bd-label"><span data-lang="en">Unpaid / underpaid wages</span><span data-lang="es">Salarios no pagados / pagados de menos</span></span>
+              <span class="bd-val" id="br-unpaid-val"></span>
+            </div>
+            <div class="breakdown-row" id="br-ot" style="display:none;">
+              <span class="bd-label"><span data-lang="en">Unpaid overtime</span><span data-lang="es">Horas extra no pagadas</span></span>
+              <span class="bd-val" id="br-ot-val"></span>
+            </div>
+            <div class="breakdown-row" id="br-oc" style="display:none;">
+              <span class="bd-label"><span data-lang="en">Off-the-clock wages</span><span data-lang="es">Salario fuera de horario</span></span>
+              <span class="bd-val" id="br-oc-val"></span>
+            </div>
+            <div class="breakdown-row" id="br-ded" style="display:none;">
+              <span class="bd-label"><span data-lang="en">Illegal deductions</span><span data-lang="es">Deducciones ilegales</span></span>
+              <span class="bd-val" id="br-ded-val"></span>
+            </div>
+            <div class="breakdown-row" id="br-int" style="display:none;">
+              <span class="bd-label"><span data-lang="en">8% annual interest</span><span data-lang="es">8% de interés anual</span></span>
+              <span class="bd-val" id="br-int-val"></span>
+            </div>
+            <div class="breakdown-row" id="br-dmg" style="display:none;">
+              <span class="bd-label"><span data-lang="en">Damages multiplier</span><span data-lang="es">Multiplicador de daños</span></span>
+              <span class="bd-val" id="br-dmg-val"></span>
+            </div>
+            <div class="breakdown-row total">
+              <span class="bd-label"><span data-lang="en">Total estimated recovery</span><span data-lang="es">Recuperación total estimada</span></span>
+              <span class="bd-val" id="br-grand"></span>
+            </div>
+          </div>
+
+          <div class="next-steps-box" id="calc-nextsteps">
+            <p id="calc-advice"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="alert-box" style="margin-top:2.5rem;">
+      <p>
+        <span data-lang="en"><strong>Disclaimer:</strong> This calculator provides estimates only and does not constitute legal advice. Actual recovery amounts depend on your specific circumstances, evidence, and applicable law. Contact a licensed attorney or Virginia DOLI for a formal assessment.</span>
+        <span data-lang="es"><strong>Aviso legal:</strong> Esta calculadora proporciona estimaciones únicamente y no constituye asesoramiento legal. Los montos reales de recuperación dependen de tus circunstancias específicas, evidencia y la ley aplicable. Contacta a un abogado con licencia o a DOLI de Virginia para una evaluación formal.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7: QUIZ -->
+<div class="page" id="page-quiz">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Self-Assessment</span>
+      <span data-lang="es">Autoevaluación</span>
+    </div>
+    <h1>
+      <span data-lang="en">Were You a Victim of Wage Theft?</span>
+      <span data-lang="es">¿Fuiste Víctima de Robo de Salario?</span>
+    </h1>
+    <p>
+      <span data-lang="en">Answer 8 quick questions about your work situation. We'll tell you if you may have a case — and what to do next.</span>
+      <span data-lang="es">Responde 8 preguntas rápidas sobre tu situación laboral. Te diremos si podrías tener un caso — y qué hacer a continuación.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="quiz-shell">
+      <!-- Progress -->
+      <div class="quiz-progress-wrap" id="quiz-progress-wrap">
+        <div class="quiz-progress-label">
+          <span id="quiz-progress-text"></span>
+          <span id="quiz-progress-pct"></span>
+        </div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <!-- Question card -->
+      <div id="quiz-question-area"></div>
+
+      <!-- Result area -->
+      <div id="quiz-result-area" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 8: ANONYMOUS REPORT -->
+<div class="page" id="page-report">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Anonymous & Confidential</span>
+      <span data-lang="es">Anónimo y Confidencial</span>
+    </div>
+    <h1>
+      <span data-lang="en">Share Your Experience</span>
+      <span data-lang="es">Comparte Tu Experiencia</span>
+    </h1>
+    <p>
+      <span data-lang="en">Your story matters. Submitting your experience helps us understand the scope of wage theft in Fairfax — and helps other workers know they're not alone.</span>
+      <span data-lang="es">Tu historia importa. Compartir tu experiencia nos ayuda a entender el alcance del robo de salario en Fairfax — y ayuda a otros trabajadores a saber que no están solos.</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="report-wrap">
+
+      <!-- Live counter -->
+      <div class="report-counter">
+        <div class="rc-num" id="report-count">0</div>
+        <div class="rc-text">
+          <strong><span data-lang="en">Workers have reported wage theft through this site</span><span data-lang="es">Trabajadores han reportado robo de salario a través de este sitio</span></strong>
+          <span data-lang="en">Every report helps build the case for stronger protections in Fairfax County.</span>
+          <span data-lang="es">Cada reporte ayuda a construir el caso para protecciones más fuertes en el Condado de Fairfax.</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="report-form-card" id="report-form-card">
+        <h3>
+          <span data-lang="en">Submit an anonymous report</span>
+          <span data-lang="es">Enviar un reporte anónimo</span>
+        </h3>
+        <p class="form-sub">
+          <span data-lang="en">No personal information is required. Your submission will be counted and may be shared (anonymously) on this site to show others they are not alone.</span>
+          <span data-lang="es">No se requiere información personal. Tu envío será contado y puede ser compartido (de forma anónima) en este sitio para mostrar a otros que no están solos.</span>
+        </p>
+
+        <div class="anon-notice">
+          🔒 <span data-lang="en"><strong>Your privacy is protected.</strong> We collect no names, emails, or identifying information. Your report is stored locally in your browser only.</span><span data-lang="es"><strong>Tu privacidad está protegida.</strong> No recopilamos nombres, correos ni información identificable. Tu reporte se almacena solo localmente en tu navegador.</span>
+        </div>
+
+        <div class="form-row" style="margin-bottom:1rem;">
+          <div class="field-group">
+            <label><span data-lang="en">Type of wage theft</span><span data-lang="es">Tipo de robo de salario</span></label>
+            <select id="r-type">
+              <option value=""><span data-lang="en">-- Select --</span></option>
+              <option value="Overtime Denial">Overtime Denial / Negación de horas extra</option>
+              <option value="Minimum Wage">Below Minimum Wage / Debajo del salario mínimo</option>
+              <option value="Off-the-Clock">Off-the-Clock Work / Trabajo fuera de horario</option>
+              <option value="Misclassification">Misclassification / Clasificación errónea</option>
+              <option value="Illegal Deductions">Illegal Deductions / Deducciones ilegales</option>
+              <option value="Tip Theft">Tip Theft / Robo de propinas</option>
+              <option value="Withheld Wages">Withheld Wages / Salarios retenidos</option>
+              <option value="Other">Other / Otro</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label><span data-lang="en">Industry / sector</span><span data-lang="es">Industria / sector</span></label>
+            <select id="r-industry">
+              <option value=""><span data-lang="en">-- Select --</span></option>
+              <option value="Construction">Construction / Construcción</option>
+              <option value="Food Service">Food Service / Servicio de alimentos</option>
+              <option value="Domestic Work">Domestic Work / Trabajo doméstico</option>
+              <option value="Retail">Retail / Comercio</option>
+              <option value="Agriculture">Agriculture / Agricultura</option>
+              <option value="Healthcare">Healthcare / Salud</option>
+              <option value="Technology">Technology / Tecnología</option>
+              <option value="Other">Other / Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row" style="margin-bottom:1rem;">
+          <div class="field-group">
+            <label><span data-lang="en">Approximate area in Fairfax County</span><span data-lang="es">Área aproximada en el Condado de Fairfax</span></label>
+            <select id="r-area">
+              <option value=""><span data-lang="en">-- Select --</span></option>
+              <option value="Annandale">Annandale</option>
+              <option value="Centreville">Centreville</option>
+              <option value="Chantilly">Chantilly</option>
+              <option value="Fairfax City">Fairfax City</option>
+              <option value="Falls Church">Falls Church</option>
+              <option value="Herndon">Herndon</option>
+              <option value="McLean">McLean</option>
+              <option value="Reston">Reston</option>
+              <option value="Springfield">Springfield</option>
+              <option value="Vienna">Vienna</option>
+              <option value="Other/Unknown">Other / Unknown</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label><span data-lang="en">Approximate amount stolen</span><span data-lang="es">Monto aproximado robado</span></label>
+            <select id="r-amount">
+              <option value=""><span data-lang="en">-- Select --</span></option>
+              <option value="Under $500">Under $500 / Menos de $500</option>
+              <option value="$500–$2,000">$500–$2,000</option>
+              <option value="$2,000–$5,000">$2,000–$5,000</option>
+              <option value="$5,000–$10,000">$5,000–$10,000</option>
+              <option value="Over $10,000">Over $10,000 / Más de $10,000</option>
+              <option value="Unknown">Unknown / No sé</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group" style="margin-bottom:1.25rem;">
+          <label><span data-lang="en">Brief description (optional — no personal details needed)</span><span data-lang="es">Descripción breve (opcional — no se necesitan datos personales)</span></label>
+          <textarea id="r-desc" placeholder="e.g. 'My employer made me work two hours before clocking in every day for six months...' / Ej. 'Mi empleador me hacía trabajar dos horas antes de registrar mi entrada...'"></textarea>
+        </div>
+
+        <button class="btn-submit" onclick="submitReport()">
+          <span data-lang="en">Submit Anonymous Report</span>
+          <span data-lang="es">Enviar Reporte Anónimo</span>
+        </button>
+
+        <!-- Success state -->
+        <div class="report-success" id="report-success">
+          <div class="s-icon">✅</div>
+          <h3><span data-lang="en">Thank you for sharing.</span><span data-lang="es">Gracias por compartir.</span></h3>
+          <p><span data-lang="en">Your report has been recorded. Together, these stories help document the reality of wage theft in Fairfax County and push for change.</span><span data-lang="es">Tu reporte ha sido registrado. Juntas, estas historias ayudan a documentar la realidad del robo de salario en el Condado de Fairfax y a impulsar el cambio.</span></p>
+          <button class="btn-submit" style="max-width:280px;margin:0 auto;" onclick="reportAnother()">
+            <span data-lang="en">Submit another report</span>
+            <span data-lang="es">Enviar otro reporte</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Recent reports feed -->
+      <div class="recent-reports" id="recent-reports-section" style="display:none;">
+        <h3><span data-lang="en">Recent anonymous reports</span><span data-lang="es">Reportes anónimos recientes</span></h3>
+        <div id="reports-feed"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 9: INTERACTIVE MAP -->
+<div class="page" id="page-map">
+  <div class="hero">
+    <div class="hero-label">
+      <span data-lang="en">Fairfax County</span>
+      <span data-lang="es">Condado de Fairfax</span>
+    </div>
+    <h1>
+      <span data-lang="en">Wage Theft Across Fairfax County</span>
+      <span data-lang="es">Robo de Salario en el Condado de Fairfax</span>
+    </h1>
+    <p>
+      <span data-lang="en">Explore which districts and communities are most affected. Hover over any area to see local data.</span>
+      <span data-lang="es">Explora qué distritos y comunidades son más afectados. Pasa el cursor sobre cualquier área para ver los datos locales.</span>
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="map-intro">
+      <div class="map-stat">
+        <div class="ms-num" id="map-total-reports">0</div>
+        <div class="ms-label"><span data-lang="en">Reports submitted through this site</span><span data-lang="es">Reportes enviados a través de este sitio</span></div>
+      </div>
+      <div class="map-stat">
+        <div class="ms-num">10</div>
+        <div class="ms-label"><span data-lang="en">Fairfax County districts tracked</span><span data-lang="es">Distritos del Condado de Fairfax rastreados</span></div>
+      </div>
+      <div class="map-stat">
+        <div class="ms-num">$50B+</div>
+        <div class="ms-label"><span data-lang="en">Stolen from U.S. workers annually</span><span data-lang="es">Robados a trabajadores de EE.UU. anualmente</span></div>
+      </div>
+      <div class="map-stat">
+        <div class="ms-num" id="map-top-district">—</div>
+        <div class="ms-label"><span data-lang="en">Most reported area</span><span data-lang="es">Área con más reportes</span></div>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <div class="map-toolbar">
+        <h3><span data-lang="en">Fairfax County — Reports by Area</span><span data-lang="es">Condado de Fairfax — Reportes por Área</span></h3>
+        <div class="map-legend">
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:#c8d8ec;"></div><span data-lang="en">Low</span><span data-lang="es">Bajo</span></div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:#6a9cc8;"></div><span data-lang="en">Medium</span><span data-lang="es">Medio</span></div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:#1a2744;"></div><span data-lang="en">High</span><span data-lang="es">Alto</span></div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:#b8882a;"></div><span data-lang="en">Reported here</span><span data-lang="es">Reportado aquí</span></div>
+        </div>
+      </div>
+      <div id="fairfax-map">
+        <div class="map-tooltip" id="map-tooltip"></div>
+        <!-- SVG map rendered by JS -->
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <span data-lang="en">By district</span>
+      <span data-lang="es">Por distrito</span>
+    </div>
+    <div class="divider"></div>
+    <div class="district-list" id="district-list"></div>
+
+  </div>
+</div>
+
+<footer>
+  <p>
+    <span data-lang="en">This site is for informational and awareness purposes. It does not constitute legal advice. For legal guidance, consult a licensed attorney.</span>
+    <span data-lang="es">Este sitio es de carácter informativo y de concientización. No constituye asesoramiento legal. Para orientación legal, consulte a un abogado con licencia.</span>
+  </p>
+  <p style="margin-top:6px;">Fairfax County, Virginia &nbsp;·&nbsp; <a href="https://www.doli.virginia.gov" target="_blank">Virginia DOLI</a> &nbsp;·&nbsp; <a href="https://www.fairfaxcounty.gov" target="_blank">Fairfax County</a></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// ── WAGE THEFT CALCULATOR ──────────────────────────────────────
+function fmt(n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+document.getElementById('c-offclock').addEventListener('change', function() {
+  document.getElementById('offclock-field').style.display = this.checked ? 'block' : 'none';
+  calcUpdate();
+});
+document.getElementById('c-deductions').addEventListener('change', function() {
+  document.getElementById('deductions-field').style.display = this.checked ? 'block' : 'none';
+  calcUpdate();
+});
+
+function calcUpdate() {
+  const rate    = parseFloat(document.getElementById('c-rate').value) || 0;
+  const hours   = parseFloat(document.getElementById('c-hours').value) || 0;
+  const weeks   = parseFloat(document.getElementById('c-weeks').value) || 0;
+  const minWage = 12.77;
+  const intent  = document.getElementById('c-intent').value;
+
+  const doMinWage    = document.getElementById('c-minwage').checked;
+  const doOvertime   = document.getElementById('c-overtime').checked;
+  const doOffClock   = document.getElementById('c-offclock').checked;
+  const doDeductions = document.getElementById('c-deductions').checked;
+
+  if (!rate || !hours || !weeks) {
+    document.getElementById('calc-placeholder').style.display = 'block';
+    document.getElementById('calc-output').style.display = 'none';
+    return;
+  }
+
+  let unpaid = 0, overtimeLost = 0, offClockLost = 0, deductionLost = 0;
+
+  // Minimum wage underpayment
+  if (doMinWage && rate < minWage) {
+    unpaid = (minWage - rate) * hours * weeks;
+  }
+
+  // Overtime (hours over 40 per week should be paid at 1.5x)
+  if (doOvertime && hours > 40) {
+    const otHours = hours - 40;
+    const effectiveRate = Math.max(rate, minWage);
+    const otDue = otHours * effectiveRate * 1.5;
+    const otPaid = otHours * effectiveRate; // assume paid at straight time
+    overtimeLost = (otDue - otPaid) * weeks;
+  }
+
+  // Off-the-clock
+  if (doOffClock) {
+    const ocHours = parseFloat(document.getElementById('c-offhours').value) || 0;
+    const effectiveRate = Math.max(rate, minWage);
+    offClockLost = ocHours * effectiveRate * weeks;
+  }
+
+  // Illegal deductions
+  if (doDeductions) {
+    deductionLost = parseFloat(document.getElementById('c-dedamt').value) || 0;
+  }
+
+  const base = unpaid + overtimeLost + offClockLost + deductionLost;
+  if (base === 0) {
+    document.getElementById('calc-placeholder').style.display = 'block';
+    document.getElementById('calc-output').style.display = 'none';
+    return;
+  }
+
+  // 8% annual interest — approximate based on weeks
+  const years = weeks / 52;
+  const interest = base * 0.08 * years;
+
+  // Damages multiplier
+  let multiplier = 1;
+  let multiplierLabel = '';
+  const isEs = document.body.classList.contains('lang-es');
+  if (intent === 'yes') {
+    multiplier = 3;
+    multiplierLabel = isEs ? '×3 (violación intencional)' : '×3 (intentional violation)';
+  } else if (intent === 'unknown') {
+    multiplier = 2;
+    multiplierLabel = isEs ? '×2 (estimado, puede variar)' : '×2 (estimated, may vary)';
+  } else {
+    multiplier = 1;
+    multiplierLabel = isEs ? '×1 (violación no intencional)' : '×1 (non-intentional)';
+  }
+
+  const withInterest = base + interest;
+  const total = withInterest * multiplier;
+
+  // Show output
+  document.getElementById('calc-placeholder').style.display = 'none';
+  document.getElementById('calc-output').style.display = 'block';
+  document.getElementById('r-total').textContent = fmt(total);
+
+  const subEn = `Based on ${weeks} week${weeks!==1?'s':''} · ${hours} hrs/week · $${rate.toFixed(2)}/hr`;
+  const subEs = `Basado en ${weeks} semana${weeks!==1?'s':''} · ${hours} hrs/semana · $${rate.toFixed(2)}/hr`;
+  document.getElementById('r-sub').textContent = isEs ? subEs : subEn;
+
+  // Breakdown rows
+  const show = (id, val, valId) => {
+    document.getElementById(id).style.display = val > 0 ? 'flex' : 'none';
+    if (val > 0) document.getElementById(valId).textContent = fmt(val);
+  };
+  show('br-unpaid', unpaid, 'br-unpaid-val');
+  show('br-ot', overtimeLost, 'br-ot-val');
+  show('br-oc', offClockLost, 'br-oc-val');
+  show('br-ded', deductionLost, 'br-ded-val');
+  show('br-int', interest, 'br-int-val');
+  document.getElementById('br-dmg').style.display = 'flex';
+  document.getElementById('br-dmg-val').textContent = multiplierLabel;
+  document.getElementById('br-grand').textContent = fmt(total);
+
+  // Advice
+  let advice = '';
+  if (isEs) {
+    if (total > 10000) advice = `<strong>Recuperación estimada significativa.</strong> Con $${fmt(total).replace('$','')} en juego, te recomendamos encarecidamente contactar a un abogado o al DOLI de Virginia lo antes posible. No esperes — el plazo de prescripción es de 3 años.`;
+    else if (total > 2000) advice = `<strong>Vale la pena reclamarlo.</strong> Es posible que tengas derecho a ${fmt(total)}. Comunícate con el DOLI de Virginia al (804) 371-2327 para presentar una queja gratuita.`;
+    else advice = `<strong>Cada dólar cuenta.</strong> Incluso reclamaciones más pequeñas son válidas. El DOLI de Virginia puede investigar sin costo para ti.`;
+  } else {
+    if (total > 10000) advice = `<strong>Significant estimated recovery.</strong> With ${fmt(total)} at stake, we strongly recommend contacting an attorney or Virginia DOLI as soon as possible. Don't wait — the statute of limitations is 3 years.`;
+    else if (total > 2000) advice = `<strong>Worth pursuing.</strong> You may be entitled to ${fmt(total)}. Reach out to Virginia DOLI at (804) 371-2327 to file a free complaint.`;
+    else advice = `<strong>Every dollar counts.</strong> Even smaller claims are valid. Virginia DOLI can investigate at no cost to you.`;
+  }
+  document.getElementById('calc-advice').innerHTML = advice;
+}
+
+function calcReset() {
+  ['c-rate','c-hours','c-weeks','c-offhours','c-dedamt'].forEach(id => { document.getElementById(id).value = ''; });
+  ['c-minwage','c-overtime','c-offclock','c-deductions'].forEach(id => { document.getElementById(id).checked = false; });
+  document.getElementById('c-intent').value = 'unknown';
+  document.getElementById('offclock-field').style.display = 'none';
+  document.getElementById('deductions-field').style.display = 'none';
+  document.getElementById('calc-placeholder').style.display = 'block';
+  document.getElementById('calc-output').style.display = 'none';
+}
+// ────────────────────────────────────────────────────────────────
+
+// ── REPORT SYSTEM ─────────────────────────────────────────────
+const REPORT_KEY = 'wt_reports_v1';
+const REPORT_COUNT_KEY = 'wt_count_v1';
+
+function getReports() {
+  try { return JSON.parse(localStorage.getItem(REPORT_KEY) || '[]'); } catch(e) { return []; }
+}
+function saveReports(arr) {
+  try { localStorage.setItem(REPORT_KEY, JSON.stringify(arr)); } catch(e) {}
+}
+function getCount() {
+  // Seed with a realistic base so it doesn't show 0 on first visit
+  const stored = parseInt(localStorage.getItem(REPORT_COUNT_KEY) || '0');
+  return stored || 47; // seed of 47
+}
+function bumpCount() {
+  const c = getCount() + 1;
+  localStorage.setItem(REPORT_COUNT_KEY, c);
+  return c;
+}
+
+function updateReportCounter() {
+  const c = getCount();
+  document.getElementById('report-count').textContent = c;
+  const mapEl = document.getElementById('map-total-reports');
+  if (mapEl) mapEl.textContent = c;
+}
+
+function submitReport() {
+  const type     = document.getElementById('r-type').value;
+  const industry = document.getElementById('r-industry').value;
+  const area     = document.getElementById('r-area').value;
+  const amount   = document.getElementById('r-amount').value;
+  const desc     = document.getElementById('r-desc').value.trim();
+  const lang     = document.body.classList.contains('lang-es') ? 'es' : 'en';
+
+  if (!type) {
+    alert(lang === 'es' ? 'Por favor selecciona el tipo de robo de salario.' : 'Please select the type of wage theft.');
+    return;
+  }
+
+  const report = {
+    type, industry, area, amount,
+    desc: desc ? desc.substring(0, 300) : '',
+    ts: Date.now(),
+    lang
+  };
+
+  const reports = getReports();
+  reports.unshift(report);
+  saveReports(reports.slice(0, 50)); // keep last 50
+  const newCount = bumpCount();
+  document.getElementById('report-count').textContent = newCount;
+
+  // Show success
+  document.getElementById('report-form-card').querySelector('form, .field-group, .form-row, .anon-notice, .btn-submit, h3, .form-sub').style && null;
+  const inner = document.getElementById('report-form-card');
+  inner.querySelectorAll('.form-row, .field-group, .anon-notice, .btn-submit, h3, .form-sub, p.form-sub').forEach(el => el.style.display = 'none');
+  document.getElementById('report-success').style.display = 'block';
+
+  renderReportFeed();
+  renderMap();
+}
+
+function reportAnother() {
+  document.getElementById('report-success').style.display = 'none';
+  const inner = document.getElementById('report-form-card');
+  inner.querySelectorAll('.form-row, .field-group, .anon-notice, .btn-submit, h3, p.form-sub').forEach(el => el.style.display = '');
+  ['r-type','r-industry','r-area','r-amount'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('r-desc').value = '';
+}
+
+const TYPE_ICONS = {
+  'Overtime Denial': '⏰', 'Minimum Wage': '💵', 'Off-the-Clock': '🕐',
+  'Misclassification': '📋', 'Illegal Deductions': '✂️', 'Tip Theft': '💰',
+  'Withheld Wages': '🚫', 'Other': '⚠️'
+};
+
+function renderReportFeed() {
+  const reports = getReports();
+  const lang = document.body.classList.contains('lang-es') ? 'es' : 'en';
+  const sec = document.getElementById('recent-reports-section');
+  const feed = document.getElementById('reports-feed');
+  if (!reports.length) { sec.style.display = 'none'; return; }
+  sec.style.display = 'block';
+  feed.innerHTML = reports.slice(0, 6).map(r => {
+    const ago = timeAgo(r.ts, lang);
+    const desc = r.desc ? `<div class="ri-desc" style="margin-top:4px;font-style:italic;">"${r.desc}"</div>` : '';
+    const meta = [r.area, r.industry, r.amount].filter(Boolean).join(' · ');
+    return `<div class="report-item">
+      <div class="ri-icon">${TYPE_ICONS[r.type] || '⚠️'}</div>
+      <div class="ri-body">
+        <div class="ri-type">${r.type}</div>
+        ${desc}
+        <div class="ri-meta">${meta} · ${ago}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function timeAgo(ts, lang) {
+  const diff = (Date.now() - ts) / 1000;
+  if (diff < 60) return lang === 'es' ? 'Hace un momento' : 'Just now';
+  if (diff < 3600) return lang === 'es' ? `Hace ${Math.floor(diff/60)} min` : `${Math.floor(diff/60)}m ago`;
+  if (diff < 86400) return lang === 'es' ? `Hace ${Math.floor(diff/3600)}h` : `${Math.floor(diff/3600)}h ago`;
+  return lang === 'es' ? `Hace ${Math.floor(diff/86400)} días` : `${Math.floor(diff/86400)}d ago`;
+}
+
+// ── MAP SYSTEM ────────────────────────────────────────────────
+const DISTRICTS = [
+  { name: 'Annandale',    x: 62, y: 54, w: 14, h: 12, base: 12, color: '#2a3d6b' },
+  { name: 'Centreville',  x: 22, y: 42, w: 16, h: 12, base: 8,  color: '#3d5a8e' },
+  { name: 'Chantilly',    x: 18, y: 28, w: 18, h: 12, base: 15, color: '#1a2744' },
+  { name: 'Fairfax City', x: 50, y: 44, w: 14, h: 10, base: 10, color: '#2a3d6b' },
+  { name: 'Falls Church', x: 70, y: 40, w: 12, h: 10, base: 7,  color: '#6a9cc8' },
+  { name: 'Herndon',      x: 20, y: 14, w: 16, h: 12, base: 9,  color: '#3d5a8e' },
+  { name: 'McLean',       x: 62, y: 26, w: 14, h: 12, base: 6,  color: '#7a9fc0' },
+  { name: 'Reston',       x: 32, y: 14, w: 16, h: 12, base: 11, color: '#2a3d6b' },
+  { name: 'Springfield',  x: 50, y: 58, w: 16, h: 12, base: 13, color: '#1a2744' },
+  { name: 'Vienna',       x: 42, y: 32, w: 14, h: 10, base: 8,  color: '#3d5a8e' },
+];
+
+function getDistrictReports() {
+  const counts = {};
+  DISTRICTS.forEach(d => { counts[d.name] = d.base; });
+  getReports().forEach(r => {
+    if (r.area && counts[r.area] !== undefined) counts[r.area]++;
+  });
+  return counts;
+}
+
+function heatColor(val, max) {
+  const t = val / max;
+  if (t < 0.33) return '#c8d8ec';
+  if (t < 0.66) return '#6a9cc8';
+  return '#1a2744';
+}
+
+function renderMap() {
+  const mapEl = document.getElementById('fairfax-map');
+  if (!mapEl) return;
+  const counts = getDistrictReports();
+  const maxCount = Math.max(...Object.values(counts));
+  const lang = document.body.classList.contains('lang-es') ? 'es' : 'en';
+
+  // Build SVG
+  let rects = '', labels = '';
+  DISTRICTS.forEach(d => {
+    const cnt = counts[d.name] || 0;
+    const fill = heatColor(cnt, maxCount);
+    const px = d.x + '%', py = d.y + '%', pw = d.w + '%', ph = d.h + '%';
+    rects += `<rect x="${px}" y="${py}" width="${pw}" height="${ph}" fill="${fill}" stroke="white" stroke-width="1.5" rx="4"
+      class="map-district" data-name="${d.name}" data-count="${cnt}"
+      onmouseenter="showMapTip(event,'${d.name}',${cnt},'${lang}')"
+      onmouseleave="hideMapTip()"
+      style="cursor:pointer;transition:filter 0.15s;"
+      onmouseover="this.style.filter='brightness(1.15)'"
+      onmouseout="this.style.filter='none';hideMapTip()"/>`;
+    labels += `<text x="${(d.x + d.w/2) + '%'}" y="${(d.y + d.h/2 + 1) + '%'}"
+      text-anchor="middle" dominant-baseline="middle"
+      font-size="1.6%" font-family="DM Sans,sans-serif" font-weight="700"
+      fill="${heatColor(cnt,maxCount) === '#1a2744' ? 'white' : '#1a2744'}"
+      pointer-events="none">${d.name.split(' ')[0]}</text>`;
+  });
+
+  // Add user-submitted reports as gold dots
+  const reports = getReports();
+  let dots = '';
+  reports.slice(0,20).forEach((r, i) => {
+    const d = DISTRICTS.find(d => d.name === r.area);
+    if (!d) return;
+    const cx = (d.x + d.w/2 + (Math.random()*4-2)) + '%';
+    const cy = (d.y + d.h/2 + (Math.random()*4-2)) + '%';
+    dots += `<circle cx="${cx}" cy="${cy}" r="1%" fill="#e8b84b" stroke="white" stroke-width="0.5" opacity="0.85"/>`;
+  });
+
+  mapEl.innerHTML = `
+    <div class="map-tooltip" id="map-tooltip"></div>
+    <svg width="100%" height="100%" viewBox="0 0 100 80" preserveAspectRatio="xMidYMid meet">
+      <rect width="100" height="80" fill="#e8eef4"/>
+      ${rects}${dots}${labels}
+    </svg>`;
+
+  // District list
+  const list = document.getElementById('district-list');
+  if (list) {
+    const sorted = [...DISTRICTS].sort((a,b) => (counts[b.name]||0) - (counts[a.name]||0));
+    list.innerHTML = sorted.map(d => {
+      const cnt = counts[d.name] || 0;
+      const pct = Math.round((cnt / maxCount) * 100);
+      const barColor = heatColor(cnt, maxCount);
+      return `<div class="district-card" onclick="showPage('report')">
+        <div class="dc-name">${d.name}</div>
+        <div class="dc-bar-wrap"><div class="dc-bar" style="width:${pct}%;background:${barColor};"></div></div>
+        <div class="dc-stats">${cnt} ${lang==='es'?'reportes':'reports'} · ${lang==='es'?'Clic para reportar':'Click to report'}</div>
+      </div>`;
+    }).join('');
+
+    // Update top district stat
+    const topEl = document.getElementById('map-top-district');
+    if (topEl) topEl.textContent = sorted[0].name;
+  }
+
+  updateReportCounter();
+}
+
+function showMapTip(e, name, count, lang) {
+  const tip = document.getElementById('map-tooltip');
+  if (!tip) return;
+  const mapEl = document.getElementById('fairfax-map');
+  const rect = mapEl.getBoundingClientRect();
+  const x = e.clientX - rect.left + 12;
+  const y = e.clientY - rect.top - 10;
+  const label = lang === 'es' ? 'reportes' : 'reports';
+  tip.innerHTML = `<strong>${name}</strong>${count} ${label}`;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+  tip.style.display = 'block';
+}
+
+function hideMapTip() {
+  const tip = document.getElementById('map-tooltip');
+  if (tip) tip.style.display = 'none';
+}
+
+// Init on page load
+updateReportCounter();
+renderReportFeed();
+// ────────────────────────────────────────────────────────────────
+
+
+const QUIZ = {
+  questions: [
+    {
+      tag:   { en: 'Your Pay', es: 'Tu Pago' },
+      text:  { en: 'Did your boss pay you less than $12.77 for every hour you worked?', es: '¿Tu jefe te pagó menos de $12.77 por cada hora que trabajaste?' },
+      sub:   { en: 'In Virginia, every worker must be paid at least $12.77 per hour. This is the law — even if you are paid in cash.', es: 'En Virginia, todo trabajador debe recibir al menos $12.77 por hora. Esto es la ley — aunque te paguen en efectivo.' },
+      weight: 3,
+      opts: [
+        { en: '✋ Yes — I got paid less than $12.77 per hour', es: '✋ Sí — me pagaron menos de $12.77 por hora', val: 'yes' },
+        { en: '✅ No — I was paid $12.77 or more per hour', es: '✅ No — me pagaron $12.77 o más por hora', val: 'no' },
+        { en: '❓ I am not sure how much I was paid per hour', es: '❓ No sé exactamente cuánto me pagaban por hora', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Extra Hours', es: 'Horas de Más' },
+      text:  { en: 'Did you work more than 40 hours in a week — and NOT get paid extra for those hours?', es: '¿Trabajaste más de 40 horas en una semana — y NO te pagaron extra por esas horas?' },
+      sub:   { en: 'If you work more than 40 hours in one week, your boss must pay you more money for those extra hours. This is called overtime pay.', es: 'Si trabajas más de 40 horas en una semana, tu jefe debe pagarte más dinero por esas horas de más. Eso se llama pago de horas extra.' },
+      weight: 3,
+      opts: [
+        { en: '✋ Yes — I worked more than 40 hours but never got extra pay', es: '✋ Sí — trabajé más de 40 horas pero nunca recibí pago extra', val: 'yes' },
+        { en: '✅ No — I was paid extra when I worked more than 40 hours', es: '✅ No — me pagaron extra cuando trabajé más de 40 horas', val: 'no' },
+        { en: '❓ I worked extra hours but I am not sure if I got paid right', es: '❓ Trabajé horas de más pero no sé si me pagaron bien', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Unpaid Work', es: 'Trabajo Sin Pago' },
+      text:  { en: 'Did your boss make you work without pay — like before your shift started or after it ended?', es: '¿Tu jefe te hizo trabajar sin pagarte — como antes de empezar tu turno o después de terminarlo?' },
+      sub:   { en: 'Examples: cleaning before starting, staying late to close, attending a meeting without pay. Every minute you work, you must be paid.', es: 'Ejemplos: limpiar antes de empezar, quedarte tarde para cerrar, asistir a una reunión sin pago. Cada minuto que trabajas, te deben pagar.' },
+      weight: 2,
+      opts: [
+        { en: '✋ Yes — I often worked without being paid for that time', es: '✋ Sí — a menudo trabajé sin que me pagaran ese tiempo', val: 'yes' },
+        { en: '✅ No — I was always paid for all the time I worked', es: '✅ No — siempre me pagaron por todo el tiempo que trabajé', val: 'no' },
+        { en: '❓ Sometimes, but only for a few minutes', es: '❓ A veces, pero solo por unos minutos', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Your Worker Status', es: 'Tu Tipo de Trabajo' },
+      text:  { en: 'Did your boss call you a "contractor" but control your schedule, tools, and work like a regular employee?', es: '¿Tu jefe te llamaba "contratista" pero controlaba tu horario, herramientas y trabajo como si fueras empleado?' },
+      sub:   { en: 'Some bosses call workers "contractors" to avoid paying them correctly. If your boss told you when to work, what to do, and gave you the tools — you may actually be an employee with more rights.', es: 'Algunos jefes llaman "contratistas" a los trabajadores para no pagarles correctamente. Si tu jefe te decía cuándo trabajar, qué hacer y te daba las herramientas — es posible que seas empleado con más derechos.' },
+      weight: 3,
+      opts: [
+        { en: '✋ Yes — my boss controlled my hours, tools, and tasks', es: '✋ Sí — mi jefe controlaba mis horas, herramientas y tareas', val: 'yes' },
+        { en: '✅ No — I chose my own hours and worked independently', es: '✅ No — yo elegía mis propias horas y trabajaba de forma independiente', val: 'no' },
+        { en: '❓ I am not sure what type of worker I am', es: '❓ No estoy seguro/a de qué tipo de trabajador soy', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Money Taken Out', es: 'Dinero Descontado' },
+      text:  { en: 'Did your boss take money out of your paycheck for things like uniforms, tools, or mistakes — without asking you first?', es: '¿Tu jefe te descontó dinero del cheque por cosas como uniformes, herramientas o errores — sin pedirte permiso?' },
+      sub:   { en: 'Your boss cannot take money from your pay without your agreement. Things like uniforms, equipment, or "damages" cannot be deducted without written permission.', es: 'Tu jefe no puede quitarte dinero de tu pago sin tu acuerdo. Cosas como uniformes, equipo o "daños" no se pueden descontar sin permiso por escrito.' },
+      weight: 2,
+      opts: [
+        { en: '✋ Yes — money was taken from my check that I did not agree to', es: '✋ Sí — me quitaron dinero del cheque sin mi acuerdo', val: 'yes' },
+        { en: '✅ No — I agreed to any money taken from my check', es: '✅ No — estuve de acuerdo con cualquier descuento de mi cheque', val: 'no' },
+        { en: '❓ I saw money missing but did not know why', es: '❓ Vi que faltaba dinero pero no supe por qué', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Your Tips', es: 'Tus Propinas' },
+      text:  { en: 'Did customers leave you tips — and your boss kept some or all of that money?', es: '¿Los clientes te dejaban propinas — y tu jefe se quedaba con parte o todo ese dinero?' },
+      sub:   { en: 'Tips belong to you. Your boss cannot keep your tips for themselves. If this happened, it is wage theft.', es: 'Las propinas son tuyas. Tu jefe no puede quedarse con tus propinas. Si esto ocurrió, es robo de salario.' },
+      weight: 2,
+      opts: [
+        { en: '✋ Yes — my boss took some or all of my tips', es: '✋ Sí — mi jefe se quedó con algunas o todas mis propinas', val: 'yes' },
+        { en: '✅ No — I kept my tips or tips did not apply to my job', es: '✅ No — me quedé con mis propinas o las propinas no aplican a mi trabajo', val: 'no' },
+        { en: '❓ Tips were shared with others and I am unsure if it was fair', es: '❓ Las propinas se repartían con otros y no sé si era justo', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Last Paycheck', es: 'Último Cheque' },
+      text:  { en: 'When you stopped working at a job, did your boss refuse to pay you — or make you wait a long time?', es: '¿Cuando dejaste de trabajar en un lugar, tu jefe se negó a pagarte — o te hizo esperar mucho tiempo?' },
+      sub:   { en: 'When you leave a job, your boss must pay you everything you earned. They cannot keep your last paycheck.', es: 'Cuando dejas un trabajo, tu jefe debe pagarte todo lo que ganaste. No puede quedarse con tu último cheque.' },
+      weight: 2,
+      opts: [
+        { en: '✋ Yes — I never got my last paycheck or had to wait a very long time', es: '✋ Sí — nunca recibí mi último cheque o tuve que esperar muchísimo tiempo', val: 'yes' },
+        { en: '✅ No — I received my last paycheck without problems', es: '✅ No — recibí mi último cheque sin problemas', val: 'no' },
+        { en: '❓ I am still waiting or I am not sure', es: '❓ Todavía estoy esperando o no estoy seguro/a', val: 'maybe' },
+      ]
+    },
+    {
+      tag:   { en: 'Fear or Threats', es: 'Miedo o Amenazas' },
+      text:  { en: 'Did your boss threaten you, fire you, or treat you badly because you asked about your pay?', es: '¿Tu jefe te amenazó, despidió o te trató mal porque preguntaste sobre tu pago?' },
+      sub:   { en: 'You have the right to ask about your pay. If your boss punished you for asking — that is also against the law. You can report this safely, even without papers.', es: 'Tienes derecho a preguntar sobre tu pago. Si tu jefe te castigó por preguntar — eso también es ilegal. Puedes reportarlo de forma segura, incluso sin documentos.' },
+      weight: 2,
+      opts: [
+        { en: '✋ Yes — my boss threatened me or treated me badly when I asked about pay', es: '✋ Sí — mi jefe me amenazó o trató mal cuando pregunté sobre mi pago', val: 'yes' },
+        { en: '✅ No — nothing bad happened when I asked about my pay', es: '✅ No — no pasó nada malo cuando pregunté sobre mi pago', val: 'no' },
+        { en: '❓ I was too afraid to ask about my pay', es: '❓ Tenía demasiado miedo de preguntar sobre mi pago', val: 'maybe' },
+      ]
+    },
+  ],
+  answers: [],
+  current: 0
+};
+
+function quizLang() { return document.body.classList.contains('lang-es') ? 'es' : 'en'; }
+
+function quizRender() {
+  const q = QUIZ.questions[QUIZ.current];
+  const total = QUIZ.questions.length;
+  const lang = quizLang();
+  const pct = Math.round((QUIZ.current / total) * 100);
+
+  document.getElementById('quiz-progress-fill').style.width = pct + '%';
+  document.getElementById('quiz-progress-text').textContent =
+    lang === 'es' ? `Pregunta ${QUIZ.current + 1} de ${total}` : `Question ${QUIZ.current + 1} of ${total}`;
+  document.getElementById('quiz-progress-pct').textContent = pct + '%';
+
+  const icons = { yes: '⚠️', no: '✅', maybe: '❓' };
+  const selectedVal = QUIZ.answers[QUIZ.current];
+
+  const optsHtml = q.opts.map(o => {
+    const cls = selectedVal === o.val
+      ? (o.val === 'yes' ? 'selected-yes' : o.val === 'no' ? 'selected-no' : 'selected-maybe')
+      : '';
+    return `<button class="quiz-opt ${cls}" onclick="quizAnswer('${o.val}')">
+      <span class="opt-icon">${icons[o.val]}</span>
+      <span class="opt-text">${o[lang]}</span>
+    </button>`;
+  }).join('');
+
+  const backBtn = QUIZ.current > 0
+    ? `<button class="btn-quiz-back" onclick="quizBack()">← ${lang === 'es' ? 'Atrás' : 'Back'}</button>`
+    : `<div></div>`;
+
+  document.getElementById('quiz-question-area').innerHTML = `
+    <div class="quiz-card">
+      <div class="q-tag">${q.tag[lang]}</div>
+      <div class="q-text">${q.text[lang]}</div>
+      <div class="q-sub">${q.sub[lang]}</div>
+      <div class="quiz-options">${optsHtml}</div>
+      <div class="quiz-nav">${backBtn}<div></div></div>
+    </div>`;
+
+  document.getElementById('quiz-progress-wrap').style.display = 'block';
+  document.getElementById('quiz-result-area').style.display = 'none';
+  document.getElementById('quiz-question-area').style.display = 'block';
+}
+
+function quizAnswer(val) {
+  QUIZ.answers[QUIZ.current] = val;
+  if (QUIZ.current < QUIZ.questions.length - 1) {
+    QUIZ.current++;
+    quizRender();
+  } else {
+    quizShowResult();
+  }
+}
+
+function quizBack() {
+  if (QUIZ.current > 0) { QUIZ.current--; quizRender(); }
+}
+
+function quizShowResult() {
+  const lang = quizLang();
+  let score = 0, maxScore = 0;
+  const findings = [];
+
+  QUIZ.questions.forEach((q, i) => {
+    const a = QUIZ.answers[i];
+    maxScore += q.weight;
+    if (a === 'yes')   { score += q.weight; findings.push({ type: 'red',    label: q.tag[lang], ans: q.opts.find(o=>o.val==='yes')[lang] }); }
+    else if (a === 'maybe') { score += q.weight * 0.5; findings.push({ type: 'yellow', label: q.tag[lang], ans: q.opts.find(o=>o.val==='maybe')[lang] }); }
+    else { findings.push({ type: 'green', label: q.tag[lang], ans: q.opts.find(o=>o.val==='no')[lang] }); }
+  });
+
+  const ratio = score / maxScore;
+  let verdict, verdictClass;
+
+  if (lang === 'en') {
+    if (ratio >= 0.45) {
+      verdict = { icon: '🚨', title: 'You Likely Experienced Wage Theft', desc: 'Based on your answers, you show strong signs of wage theft. You may be entitled to recover unpaid wages, damages, and interest. We strongly encourage you to take action.', cls: 'likely' };
+    } else if (ratio >= 0.2) {
+      verdict = { icon: '⚠️', title: 'You May Have Experienced Wage Theft', desc: 'Some of your answers raise concerns. It\'s worth speaking with a worker rights organization or attorney to understand whether you have a claim.', cls: 'possible' };
+    } else {
+      verdict = { icon: '✅', title: 'No Clear Signs of Wage Theft', desc: 'Based on your answers, your situation doesn\'t show obvious signs of wage theft. However, if something feels wrong, it\'s always worth getting a second opinion from a legal professional.', cls: 'unlikely' };
+    }
+  } else {
+    if (ratio >= 0.45) {
+      verdict = { icon: '🚨', title: 'Es Probable Que Hayas Sufrido Robo de Salario', desc: 'Según tus respuestas, muestras fuertes señales de robo de salario. Es posible que tengas derecho a recuperar salarios no pagados, daños e intereses. Te recomendamos encarecidamente que tomes acción.', cls: 'likely' };
+    } else if (ratio >= 0.2) {
+      verdict = { icon: '⚠️', title: 'Es Posible Que Hayas Sufrido Robo de Salario', desc: 'Algunas de tus respuestas generan preguntas. Vale la pena hablar con una organización de derechos laborales o un abogado para entender si tienes una reclamación.', cls: 'possible' };
+    } else {
+      verdict = { icon: '✅', title: 'Sin Señales Claras de Robo de Salario', desc: 'Según tus respuestas, tu situación no muestra señales obvias de robo de salario. Sin embargo, si algo se siente mal, siempre vale la pena obtener una segunda opinión de un profesional legal.', cls: 'unlikely' };
+    }
+  }
+
+  const findingsHtml = findings.map(f => `
+    <div class="finding-item">
+      <div class="fi-dot ${f.type}"></div>
+      <div class="fi-text"><strong>${f.label}:</strong> ${f.ans}</div>
+    </div>`).join('');
+
+  const ctaHtml = verdict.cls !== 'unlikely'
+    ? `<div class="quiz-cta-row">
+        <button class="btn-quiz-cta primary" onclick="showPage('calculator')">
+          ${lang === 'es' ? '💰 Calcular lo que me deben' : '💰 Calculate What You\'re Owed'}
+        </button>
+        <button class="btn-quiz-cta secondary" onclick="showPage('resources')">
+          ${lang === 'es' ? '🤝 Ver recursos de ayuda' : '🤝 Find Help & Resources'}
+        </button>
+      </div>`
+    : `<div class="quiz-cta-row">
+        <button class="btn-quiz-cta secondary" onclick="showPage('rights')">
+          ${lang === 'es' ? '📋 Conoce tus derechos' : '📋 Know Your Rights'}
+        </button>
+      </div>`;
+
+  document.getElementById('quiz-question-area').style.display = 'none';
+  document.getElementById('quiz-progress-wrap').style.display = 'none';
+  document.getElementById('quiz-result-area').style.display = 'block';
+  document.getElementById('quiz-result-area').innerHTML = `
+    <div class="quiz-result">
+      <div class="result-verdict ${verdict.cls}">
+        <div class="verdict-icon">${verdict.icon}</div>
+        <div class="verdict-title">${verdict.title}</div>
+        <div class="verdict-desc">${verdict.desc}</div>
+      </div>
+      <div class="quiz-findings">
+        <h4>${lang === 'es' ? 'Resumen de tus respuestas' : 'Summary of your answers'}</h4>
+        ${findingsHtml}
+      </div>
+      ${ctaHtml}
+      <button class="btn-quiz-restart" onclick="quizRestart()">
+        ${lang === 'es' ? '↩ Reiniciar el quiz' : '↩ Retake the quiz'}
+      </button>
+    </div>`;
+}
+
+function quizRestart() {
+  QUIZ.answers = [];
+  QUIZ.current = 0;
+  quizRender();
+}
+
+// ────────────────────────────────────────────────────────────────
+
+function toggleAccordion(btn) {
+  const item = btn.closest('.accordion-item');
+  const body = item.querySelector('.accordion-body');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.accordion-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.accordion-body').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.body.className = document.body.className.replace(/lang-\S+/, '') + ' lang-' + lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.documentElement.lang = lang;
+  // re-render quiz if active
+  if (document.getElementById('page-quiz').classList.contains('active')) {
+    if (document.getElementById('quiz-result-area').style.display !== 'none') {
+      quizShowResult();
+    } else {
+      quizRender();
+    }
+  }
+}
+
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  window.scrollTo(0, 0);
+  if (name === 'stats') initCharts();
+  if (name === 'quiz') quizRender();
+  if (name === 'map') renderMap();
+  if (name === 'report') { updateReportCounter(); renderReportFeed(); }
+}
+
+let chartsInitialized = false;
+function initCharts() {
+  if (chartsInitialized) return;
+  chartsInitialized = true;
+
+  const navy = '#1a2744', navy2 = '#2a3d6b', gold = '#b8882a', muted = '#5a5a65';
+
+  const labels1en = ['Minimum wage\nviolations','Overtime\ndenial','Off-the-clock\nwork','Illegal\ndeductions','Tip\ntheft','Meal break\ndenial'];
+  const labels1es = ['Violaciones\nde salario mínimo','Negación de\nhoras extra','Trabajo fuera\nde horario','Deducciones\nilegales','Robo de\npropinas','Negación de\ndescanso'];
+
+  const c1 = new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: labels1en,
+      datasets: [{ label: '% of workers', data: [26,19,17,12,9,7], backgroundColor: [navy,navy2,gold,'#3d5a8e','#7a8fa8','#a0b0c4'], borderRadius: 5, borderSkipped: false }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.parsed.y + '%' } } }, scales: { y: { beginAtZero: true, max: 35, ticks: { callback: v => v + '%', color: muted, font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { ticks: { color: muted, font: { size: 10 }, autoSkip: false, maxRotation: 0 }, grid: { display: false } } } }
+  });
+
+  const labels2en = ['Construction','Food service','Domestic work','Retail','Agriculture','Other'];
+  const labels2es = ['Construcción','Servicio de alimentos','Trabajo doméstico','Comercio','Agricultura','Otros'];
+
+  const c2 = new Chart(document.getElementById('chart2'), {
+    type: 'bar',
+    data: { labels: labels2en, datasets: [{ label: '% of complaints', data: [32,24,18,14,8,4], backgroundColor: navy, borderRadius: 4, borderSkipped: false }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.parsed.x + '%' } } }, scales: { x: { beginAtZero: true, max: 40, ticks: { callback: v => v + '%', color: muted, font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { color: muted, font: { size: 11 } }, grid: { display: false } } } }
+  });
+
+  const pieColors = [navy, navy2, gold, '#a0b0c4'];
+  const pieLabelsEn = ['Immigrant workers','Workers of color','Women','Young workers'];
+  const pieLabelsEs = ['Trabajadores inmigrantes','Trabajadores de color','Mujeres','Trabajadores jóvenes'];
+  const pieData = [38,29,20,13];
+
+  const buildLegend = (labels) => {
+    const legend = document.getElementById('legend2');
+    legend.innerHTML = '';
+    labels.forEach((l, i) => {
+      const el = document.createElement('span');
+      el.style.cssText = 'display:flex;align-items:center;gap:5px;';
+      el.innerHTML = `<span style="width:10px;height:10px;border-radius:2px;background:${pieColors[i]};display:inline-block;"></span>${l} ${pieData[i]}%`;
+      legend.appendChild(el);
+    });
+  };
+  buildLegend(pieLabelsEn);
+
+  const c3 = new Chart(document.getElementById('chart3'), {
+    type: 'doughnut',
+    data: { labels: pieLabelsEn, datasets: [{ data: pieData, backgroundColor: pieColors, borderWidth: 2, borderColor: '#f8f5ef' }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' } } }, cutout: '58%' }
+  });
+
+  // Watch language switches to update chart labels
+  const observer = new MutationObserver(() => {
+    const lang = document.body.classList.contains('lang-es') ? 'es' : 'en';
+    c1.data.labels = lang === 'es' ? labels1es : labels1en;
+    c1.update();
+    c2.data.labels = lang === 'es' ? labels2es : labels2en;
+    c2.update();
+    c3.data.labels = lang === 'es' ? pieLabelsEs : pieLabelsEn;
+    c3.update();
+    buildLegend(lang === 'es' ? pieLabelsEs : pieLabelsEn);
+  });
+  observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+}
+</script>
+</body>
+</html>
