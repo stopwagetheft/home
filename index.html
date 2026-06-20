@@ -561,14 +561,16 @@
     End Wage Theft DMV
   </div>
   <ul class="nav-links">
-    <li><button class="nav-btn active" data-page="home" onclick="showPage('home')">Home</button></li>
-    <li><button class="nav-btn" data-page="checkpay" onclick="showPage('checkpay')">Check My Pay</button></li>
-    <li><button class="nav-btn" data-page="whatis" onclick="showPage('whatis')">What Is Wage Theft?</button></li>
-    <li><button class="nav-btn" data-page="rights" onclick="showPage('rights')">Know Your Rights</button></li>
-    <li><button class="nav-btn" data-page="action" onclick="showPage('action')">Take Action</button></li>
-    <li><button class="nav-btn" data-page="resources" onclick="showPage('resources')">Resources</button></li>
+    <li><button class="nav-btn active" data-page="home" onclick="showPage('home')" data-i18n="nav.home">Home</button></li>
+    <li><button class="nav-btn" data-page="checkpay" onclick="showPage('checkpay')" data-i18n="nav.checkpay">Check My Pay</button></li>
+    <li><button class="nav-btn" data-page="whatis" onclick="showPage('whatis')" data-i18n="nav.whatis">What Is Wage Theft?</button></li>
+    <li><button class="nav-btn" data-page="rights" onclick="showPage('rights')" data-i18n="nav.rights">Know Your Rights</button></li>
+    <li><button class="nav-btn" data-page="action" onclick="showPage('action')" data-i18n="nav.action">Take Action</button></li>
+    <li><button class="nav-btn" data-page="resources" onclick="showPage('resources')" data-i18n="nav.resources">Resources</button></li>
   </ul>
-  <button class="lang-pill" type="button" aria-label="Toggle language">EN / ES</button>
+  <button class="lang-pill" type="button" id="lang-toggle" onclick="toggleLang()" aria-label="Toggle language / Cambiar idioma">
+    <span id="lang-toggle-label">EN / ES</span>
+  </button>
 </nav>
 
 <!-- ============ HOME PAGE ============ -->
@@ -578,13 +580,13 @@
     <div class="hero-left">
       <span class="badge-location">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="#FFF8EC" stroke-width="2" fill="none"/><circle cx="12" cy="9" r="2.5" stroke="#FFF8EC" stroke-width="2" fill="none"/></svg>
-        DC &middot; Maryland &middot; Virginia
+        <span data-i18n="hero.location">DC &middot; Maryland &middot; Virginia</span>
       </span>
-      <h1>Your work.<br>Your pay.<br><span class="accent">Your rights.</span></h1>
-      <p class="hero-sub">If your boss didn't pay you everything you earned, that's against the law &mdash; and you have options. Check your pay in two minutes, free and anonymous.</p>
+      <h1 data-i18n="hero.title">Your work.<br>Your pay.<br><span class="accent">Your rights.</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">If your boss didn't pay you everything you earned, that's against the law &mdash; and you have options. Check your pay in two minutes, free and anonymous.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="showPage('checkpay')">Check your pay now</button>
-        <button class="btn-secondary" onclick="showPage('whatis')">What is wage theft?</button>
+        <button class="btn-primary" onclick="showPage('checkpay')" data-i18n="hero.btn1">Check your pay now</button>
+        <button class="btn-secondary" onclick="showPage('whatis')" data-i18n="hero.btn2">What is wage theft?</button>
       </div>
     </div>
     <div class="hero-right" aria-hidden="true">
@@ -606,76 +608,76 @@
 
   <!-- Built for everyone -->
   <section class="section border-top">
-    <h2 class="section-title">Built for everyone</h2>
-    <p class="section-sub">No matter where you work &mdash; you have rights and free tools to defend them.</p>
+    <h2 class="section-title" data-i18n="home.built.title">Built for everyone</h2>
+    <p class="section-sub" data-i18n="home.built.sub">No matter where you work &mdash; you have rights and free tools to defend them.</p>
     <div class="pill-row">
-      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#B5482E" stroke-width="2"><path d="M3 7h18M5 7v12a1 1 0 001 1h12a1 1 0 001-1V7M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>Restaurants</span>
-      <span class="pill mint"><svg viewBox="0 0 24 24" fill="none" stroke="#14463F" stroke-width="2"><path d="M3 9l1-5h16l1 5M4 9h16v10a1 1 0 01-1 1H5a1 1 0 01-1-1V9zM9 13a3 3 0 006 0"/></svg>Retail</span>
-      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#E0832B" stroke-width="2"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 18l5-12h5l3 7M9 12h7"/></svg>Delivery</span>
-      <span class="pill pink"><svg viewBox="0 0 24 24" fill="none" stroke="#B5482E" stroke-width="2"><path d="M4 12l8-6 8 6v2H4v-2zM4 14h16v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg>Construction</span>
-      <span class="pill mint"><svg viewBox="0 0 24 24" fill="none" stroke="#14463F" stroke-width="2"><path d="M5 19l9-9M14 10l5-5M9 5l5 5M5 19l-1-4 4 1z"/></svg>Cleaning</span>
-      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#E0832B" stroke-width="2"><rect x="2" y="8" width="13" height="8"/><path d="M15 11h3l3 3v2h-6z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Moving</span>
-      <span class="pill muted">+ every other job</span>
+      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#B5482E" stroke-width="2"><path d="M3 7h18M5 7v12a1 1 0 001 1h12a1 1 0 001-1V7M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg><span data-i18n="job.restaurants">Restaurants</span></span>
+      <span class="pill mint"><svg viewBox="0 0 24 24" fill="none" stroke="#14463F" stroke-width="2"><path d="M3 9l1-5h16l1 5M4 9h16v10a1 1 0 01-1 1H5a1 1 0 01-1-1V9zM9 13a3 3 0 006 0"/></svg><span data-i18n="job.retail">Retail</span></span>
+      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#E0832B" stroke-width="2"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 18l5-12h5l3 7M9 12h7"/></svg><span data-i18n="job.delivery">Delivery</span></span>
+      <span class="pill pink"><svg viewBox="0 0 24 24" fill="none" stroke="#B5482E" stroke-width="2"><path d="M4 12l8-6 8 6v2H4v-2zM4 14h16v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z"/></svg><span data-i18n="job.construction">Construction</span></span>
+      <span class="pill mint"><svg viewBox="0 0 24 24" fill="none" stroke="#14463F" stroke-width="2"><path d="M5 19l9-9M14 10l5-5M9 5l5 5M5 19l-1-4 4 1z"/></svg><span data-i18n="job.cleaning">Cleaning</span></span>
+      <span class="pill tan"><svg viewBox="0 0 24 24" fill="none" stroke="#E0832B" stroke-width="2"><rect x="2" y="8" width="13" height="8"/><path d="M15 11h3l3 3v2h-6z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span data-i18n="job.moving">Moving</span></span>
+      <span class="pill muted" data-i18n="job.other">+ every other job</span>
     </div>
   </section>
 
   <!-- Everything in one place -->
   <section class="section">
-    <h2 class="section-title">Everything in one place</h2>
-    <p class="section-sub">Pick what you need &mdash; each section guides you step by step.</p>
+    <h2 class="section-title" data-i18n="home.everything.title">Everything in one place</h2>
+    <p class="section-sub" data-i18n="home.everything.sub">Pick what you need &mdash; each section guides you step by step.</p>
     <div class="card-grid">
       <button class="feature-card dark" onclick="showPage('checkpay')">
         <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="5" width="24" height="30" rx="3" stroke="#E0832B" stroke-width="2"/><line x1="13" y1="12" x2="27" y2="12" stroke="#E0832B" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="20" r="2" fill="#E0832B"/><circle cx="20" cy="20" r="2" fill="#E0832B"/><circle cx="27" cy="20" r="2" fill="#E0832B"/><circle cx="13" cy="27" r="2" fill="#E0832B"/><circle cx="20" cy="27" r="2" fill="#E0832B"/><circle cx="27" cy="27" r="2" fill="#E0832B"/></svg>
-        <div class="ftitle">Check My Pay</div>
-        <div class="fdesc">Quick checker and a short quiz</div>
+        <div class="ftitle" data-i18n="card.checkpay.title">Check My Pay</div>
+        <div class="fdesc" data-i18n="card.checkpay.desc">Quick checker and a short quiz</div>
       </button>
       <button class="feature-card tan" onclick="showPage('rights')">
         <svg viewBox="0 0 40 40" fill="none"><path d="M20 10 Q12 6 6 9 V31 Q12 28 20 32 Q28 28 34 31 V9 Q28 6 20 10 Z" stroke="#E0832B" stroke-width="2" stroke-linejoin="round"/><line x1="20" y1="10" x2="20" y2="32" stroke="#E0832B" stroke-width="2"/></svg>
-        <div class="ftitle">Know Your Rights</div>
-        <div class="fdesc">In English, Spanish, and audio</div>
+        <div class="ftitle" data-i18n="card.rights.title">Know Your Rights</div>
+        <div class="fdesc" data-i18n="card.rights.desc">In English, Spanish, and audio</div>
       </button>
       <button class="feature-card pink" onclick="showPage('action')">
         <svg viewBox="0 0 40 40" fill="none"><path d="M8 16 L18 12 V28 L8 24 Z" stroke="#B5482E" stroke-width="2" stroke-linejoin="round"/><path d="M18 12 L30 6 V34 L18 28" stroke="#B5482E" stroke-width="2" stroke-linejoin="round"/></svg>
-        <div class="ftitle">Take Action</div>
-        <div class="fdesc">Report what happened &amp; see the map</div>
+        <div class="ftitle" data-i18n="card.action.title">Take Action</div>
+        <div class="fdesc" data-i18n="card.action.desc">Report what happened &amp; see the map</div>
       </button>
       <button class="feature-card mint" onclick="showPage('resources')">
         <svg viewBox="0 0 40 40" fill="none"><path d="M8 22 Q8 16 14 16 Q18 16 20 20 Q22 16 26 16 Q32 16 32 22 Q32 28 20 34 Q8 28 8 22 Z" stroke="#14463F" stroke-width="2" stroke-linejoin="round"/></svg>
-        <div class="ftitle">Resources</div>
-        <div class="fdesc">Free help near you</div>
+        <div class="ftitle" data-i18n="card.resources.title">Resources</div>
+        <div class="fdesc" data-i18n="card.resources.desc">Free help near you</div>
       </button>
     </div>
   </section>
 
   <!-- What happened to you -->
   <section class="section">
-    <h2 class="section-title">What happened to you?</h2>
-    <p class="section-sub">Pick your situation and we'll help in less than 2 minutes.</p>
+    <h2 class="section-title" data-i18n="home.symptom.title">What happened to you?</h2>
+    <p class="section-sub" data-i18n="home.symptom.sub">Pick your situation and we'll help in less than 2 minutes.</p>
     <div class="symptom-grid">
       <button class="symptom-card" onclick="showPage('checkpay')">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="14" cy="14" r="10"/><line x1="14" y1="14" x2="14" y2="8" stroke-linecap="round"/><line x1="14" y1="14" x2="18" y2="17" stroke-linecap="round"/></svg>
-        <span class="stitle">I wasn't paid for all my hours</span>
-        <span class="slink">Check this &gt;</span>
+        <span class="stitle" data-i18n="symptom.hours">I wasn't paid for all my hours</span>
+        <span class="slink" data-i18n="symptom.check">Check this &gt;</span>
       </button>
       <button class="symptom-card" onclick="showPage('checkpay')">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 6 H19 V10 L14 14 L19 18 V22 H9 V18 L14 14 L9 10 Z"/><line x1="8" y1="6" x2="20" y2="6" stroke-linecap="round"/><line x1="8" y1="22" x2="20" y2="22" stroke-linecap="round"/></svg>
-        <span class="stitle">I wasn't paid overtime</span>
-        <span class="slink">Check this &gt;</span>
+        <span class="stitle" data-i18n="symptom.overtime">I wasn't paid overtime</span>
+        <span class="slink" data-i18n="symptom.check">Check this &gt;</span>
       </button>
       <button class="symptom-card" onclick="showPage('checkpay')">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M11 11 Q14 9 17 11 M11 14 H17 M11 17 Q14 19 17 17" stroke-linecap="round"/></svg>
-        <span class="stitle">They kept my tips</span>
-        <span class="slink">Check this &gt;</span>
+        <span class="stitle" data-i18n="symptom.tips">They kept my tips</span>
+        <span class="slink" data-i18n="symptom.check">Check this &gt;</span>
       </button>
       <button class="symptom-card" onclick="showPage('checkpay')">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2"><line x1="20" y1="6" x2="10" y2="20" stroke-linecap="round"/><path d="M10 20 L6 24 M10 20 L8 26 M10 20 L13 25" stroke-linecap="round"/></svg>
-        <span class="stitle">I worked off the clock</span>
-        <span class="slink">Check this &gt;</span>
+        <span class="stitle" data-i18n="symptom.offclock">I worked off the clock</span>
+        <span class="slink" data-i18n="symptom.check">Check this &gt;</span>
       </button>
       <button class="symptom-card" onclick="showPage('checkpay')">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="8" width="18" height="13" rx="1.5"/><path d="M5 9 L14 16 L23 9"/></svg>
-        <span class="stitle">I never got my final paycheck</span>
-        <span class="slink">Check this &gt;</span>
+        <span class="stitle" data-i18n="symptom.finalcheck">I never got my final paycheck</span>
+        <span class="slink" data-i18n="symptom.check">Check this &gt;</span>
       </button>
     </div>
   </section>
@@ -684,9 +686,9 @@
   <footer class="trust-bar">
     <div class="trust-left">
       <svg viewBox="0 0 24 24" fill="none" stroke-linejoin="round"><path d="M12 3 L20 6 V12 Q20 18 12 21 Q4 18 4 12 V6 Z" stroke="#7DD3E8" stroke-width="2" fill="none"/><path d="M8 12 L11 15 L16 9" stroke="#E0832B" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
-      <span>Completely anonymous</span>
+      <span data-i18n="trust.anon">Completely anonymous</span>
     </div>
-    <div class="trust-right">Private</div>
+    <div class="trust-right" data-i18n="trust.private">Private</div>
   </footer>
 
 </main>
@@ -695,19 +697,19 @@
 <main id="page-checkpay" class="page">
 
   <div class="page-header">
-    <p class="eyebrow">Check My Pay</p>
-    <h1>See if you're owed money</h1>
-    <p class="sub">Pick the option that fits you best. Both are free, anonymous, and take just a few minutes.</p>
+    <p class="eyebrow" data-i18n="cmp.eyebrow">Check My Pay</p>
+    <h1 data-i18n="cmp.title">See if you're owed money</h1>
+    <p class="sub" data-i18n="cmp.sub">Pick the option that fits you best. Both are free, anonymous, and take just a few minutes.</p>
   </div>
 
   <div class="subtabs" role="tablist">
     <button class="subtab active" id="subtab-quick" role="tab" aria-selected="true" onclick="showCmpTab('quick')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z" stroke-linejoin="round"/></svg>
-      Quick Checker
+      <span data-i18n="cmp.tab.quick">Quick Checker</span>
     </button>
     <button class="subtab" id="subtab-quiz" role="tab" aria-selected="false" onclick="showCmpTab('quiz')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4.5" stroke-linecap="round"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg>
-      Were You a Victim?
+      <span data-i18n="cmp.tab.quiz">Were You a Victim?</span>
     </button>
   </div>
 
@@ -716,25 +718,25 @@
     <div>
       <div class="progress-row">
         <div class="step-dot on">1</div>
-        <span class="step-label on">Your details</span>
+        <span class="step-label on" data-i18n="cmp.step1">Your details</span>
         <div class="step-line"></div>
         <div class="step-dot off">2</div>
-        <span class="step-label off">Results</span>
+        <span class="step-label off" data-i18n="cmp.step2">Results</span>
       </div>
 
-      <p class="form-title">Enter your work details</p>
+      <p class="form-title" data-i18n="cmp.formtitle">Enter your work details</p>
 
       <div class="field">
-        <label for="cmp-state">Where do you work?</label>
+        <label for="cmp-state" data-i18n="cmp.label.state">Where do you work?</label>
         <div class="state-row" id="state-row">
-          <button type="button" class="state-opt selected" data-state="VA" onclick="selectState('VA')">Virginia</button>
-          <button type="button" class="state-opt" data-state="MD" onclick="selectState('MD')">Maryland</button>
-          <button type="button" class="state-opt" data-state="DC" onclick="selectState('DC')">DC</button>
+          <button type="button" class="state-opt selected" data-state="VA" onclick="selectState('VA')" data-i18n="state.va">Virginia</button>
+          <button type="button" class="state-opt" data-state="MD" onclick="selectState('MD')" data-i18n="state.md">Maryland</button>
+          <button type="button" class="state-opt" data-state="DC" onclick="selectState('DC')" data-i18n="state.dc">DC</button>
         </div>
       </div>
 
       <div class="field">
-        <label for="cmp-rate">What did you actually get paid per hour?</label>
+        <label for="cmp-rate" data-i18n="cmp.label.rate">What did you actually get paid per hour?</label>
         <div class="input-wrap">
           <span class="input-prefix">$</span>
           <input type="number" id="cmp-rate" class="with-prefix" value="12.00" step="0.01" min="0" oninput="updateResult()">
@@ -744,55 +746,55 @@
 
       <div class="two-col">
         <div class="field">
-          <label for="cmp-hours">Hours/week</label>
+          <label for="cmp-hours" data-i18n="cmp.label.hours">Hours/week</label>
           <input type="number" id="cmp-hours" value="40" min="0" oninput="updateResult()">
         </div>
         <div class="field">
-          <label for="cmp-weeks">Weeks affected</label>
+          <label for="cmp-weeks" data-i18n="cmp.label.weeks">Weeks affected</label>
           <input type="number" id="cmp-weeks" value="52" min="0" oninput="updateResult()">
         </div>
       </div>
       <p class="hint" id="cmp-weeks-hint" style="margin-top:-10px; margin-bottom: 24px;">Virginia law allows claims up to 3 years back (&asymp; 156 weeks)</p>
 
       <button class="submit-btn" onclick="updateResult()">
-        See what you're owed
+        <span data-i18n="cmp.submit">See what you're owed</span>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <p class="privacy-note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
-        Nothing is saved or shared
+        <span data-i18n="cmp.privacy">Nothing is saved or shared</span>
       </p>
     </div>
 
     <div class="result-card">
-      <p class="result-eyebrow">YOUR ESTIMATE</p>
-      <p class="result-sub">Based on what you entered</p>
+      <p class="result-eyebrow" data-i18n="cmp.result.eyebrow">YOUR ESTIMATE</p>
+      <p class="result-sub" data-i18n="cmp.result.sub">Based on what you entered</p>
 
       <div class="result-amount-box">
-        <p class="result-amount-label">You may be owed</p>
+        <p class="result-amount-label" data-i18n="cmp.result.label">You may be owed</p>
         <p class="result-amount" id="result-amount">$3,206</p>
         <p class="result-formula" id="result-formula">$0.77/hr &times; 40 hrs &times; 52 weeks</p>
       </div>
 
       <div class="result-breakdown">
-        <div class="breakdown-row"><span>Underpayment per hour</span><span id="bd-gap">$0.77</span></div>
-        <div class="breakdown-row"><span>Total hours affected</span><span id="bd-hours">2,080 hrs</span></div>
-        <div class="breakdown-row"><span>Type of violation</span><span id="bd-type">Minimum wage</span></div>
+        <div class="breakdown-row"><span data-i18n="cmp.bd.gap">Underpayment per hour</span><span id="bd-gap">$0.77</span></div>
+        <div class="breakdown-row"><span data-i18n="cmp.bd.hours">Total hours affected</span><span id="bd-hours">2,080 hrs</span></div>
+        <div class="breakdown-row"><span data-i18n="cmp.bd.type">Type of violation</span><span id="bd-type">Minimum wage</span></div>
       </div>
 
-      <p class="next-label">What you can do next</p>
+      <p class="next-label" data-i18n="cmp.next.label">What you can do next</p>
       <div class="next-list">
         <button class="next-item" onclick="showPage('rights')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6 Q7 3 3 5 V19 Q7 17 12 19 Q17 17 21 19 V5 Q17 3 12 6 Z" stroke-linejoin="round"/></svg>
-          <span>Know Your Rights</span>
+          <span data-i18n="cmp.next.rights">Know Your Rights</span>
         </button>
         <button class="next-item" onclick="showPage('action')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 10l6-3v12l-6-3z" stroke-linejoin="round"/><path d="M11 7l8-4v18l-8-4"/></svg>
-          <span>File an anonymous report</span>
+          <span data-i18n="cmp.next.report">File an anonymous report</span>
         </button>
         <button class="next-item" onclick="showPage('resources')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13 Q4 8 9 8 Q11 8 12 11 Q13 8 15 8 Q20 8 20 13 Q20 18 12 21 Q4 18 4 13 Z" stroke-linejoin="round"/></svg>
-          <span>Talk to free legal help</span>
+          <span data-i18n="cmp.next.legal">Talk to free legal help</span>
         </button>
       </div>
     </div>
@@ -801,7 +803,7 @@
   <!-- Quiz tab (placeholder content) -->
   <div id="cmp-quiz" class="cmp-grid" style="display:none;">
     <div style="grid-column: 1 / -1; text-align:center; padding: 40px 20px;">
-      <p style="font-size:16px; color: var(--text-muted);">The "Were You a Victim?" quiz will walk you through a few simple yes/no questions to spot signs of wage theft &mdash; coming together with the rest of the page.</p>
+      <p style="font-size:16px; color: var(--text-muted);" data-i18n="cmp.quiz.placeholder">The "Were You a Victim?" quiz will walk you through a few simple yes/no questions to spot signs of wage theft &mdash; coming together with the rest of the page.</p>
     </div>
   </div>
 
@@ -812,17 +814,17 @@
 
   <div class="kyr-header">
     <div>
-      <h1>Your rights, explained</h1>
-      <p class="sub">Tap a topic to learn more &mdash; these apply regardless of immigration status.</p>
+      <h1 data-i18n="kyr.title">Your rights, explained</h1>
+      <p class="sub" data-i18n="kyr.sub">Tap a topic to learn more &mdash; these apply regardless of immigration status.</p>
       <div class="state-pills" id="kyr-state-pills">
-        <button type="button" class="state-pill selected" data-state="VA" onclick="selectKyrState('VA')">Virginia</button>
-        <button type="button" class="state-pill" data-state="MD" onclick="selectKyrState('MD')">Maryland</button>
-        <button type="button" class="state-pill" data-state="DC" onclick="selectKyrState('DC')">DC</button>
+        <button type="button" class="state-pill selected" data-state="VA" onclick="selectKyrState('VA')" data-i18n="state.va">Virginia</button>
+        <button type="button" class="state-pill" data-state="MD" onclick="selectKyrState('MD')" data-i18n="state.md">Maryland</button>
+        <button type="button" class="state-pill" data-state="DC" onclick="selectKyrState('DC')" data-i18n="state.dc">DC</button>
       </div>
     </div>
     <button class="listen-btn" onclick="toggleRightsAudio()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10v4a1 1 0 001 1h3l5 4V5L7 9H4a1 1 0 00-1 1z"/><path d="M16 9a4 4 0 010 6"/></svg>
-      <span id="listen-btn-label">Listen instead</span>
+      <span id="listen-btn-label" data-i18n="kyr.listen">Listen instead</span>
     </button>
   </div>
 
@@ -832,12 +834,12 @@
       <button class="acc-head" onclick="toggleAcc('wage')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.8-2.5 2-2.5 3.5M12 16h.01" stroke-linecap="round"/></svg>
-          <span class="acc-title">Minimum Wage</span>
+          <span class="acc-title" data-i18n="kyr.wage.title">Minimum Wage</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>Every hour you work must be paid at least the state minimum wage &mdash; no exceptions for tips, training, or trial periods.</p>
+        <p data-i18n="kyr.wage.body">Every hour you work must be paid at least the state minimum wage &mdash; no exceptions for tips, training, or trial periods.</p>
         <div class="wage-pills">
           <span class="wage-pill">VA $12.77/hr</span>
           <span class="wage-pill">MD $15.00/hr</span>
@@ -850,12 +852,12 @@
       <button class="acc-head" onclick="toggleAcc('overtime')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 2h6M12 2v3"/></svg>
-          <span class="acc-title">Overtime Pay</span>
+          <span class="acc-title" data-i18n="kyr.overtime.title">Overtime Pay</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>If you work more than 40 hours in a week, you're generally owed 1.5 times your regular hourly rate for every hour past 40 &mdash; even if you're paid a flat salary or "off the books."</p>
+        <p data-i18n="kyr.overtime.body">If you work more than 40 hours in a week, you're generally owed 1.5 times your regular hourly rate for every hour past 40 &mdash; even if you're paid a flat salary or "off the books."</p>
       </div>
     </div>
 
@@ -863,12 +865,12 @@
       <button class="acc-head" onclick="toggleAcc('retaliation')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 L20 6 V12 Q20 18 12 21 Q4 18 4 12 V6 Z" stroke-linejoin="round"/></svg>
-          <span class="acc-title">Protection from Retaliation</span>
+          <span class="acc-title" data-i18n="kyr.retaliation.title">Protection from Retaliation</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>It's illegal for your employer to fire, demote, cut your hours, or threaten you for asking about your pay, filing a complaint, or talking to a coworker about wages.</p>
+        <p data-i18n="kyr.retaliation.body">It's illegal for your employer to fire, demote, cut your hours, or threaten you for asking about your pay, filing a complaint, or talking to a coworker about wages.</p>
       </div>
     </div>
 
@@ -876,12 +878,12 @@
       <button class="acc-head" onclick="toggleAcc('records')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke-linejoin="round"/><path d="M14 3v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-          <span class="acc-title">Right to Pay Records</span>
+          <span class="acc-title" data-i18n="kyr.records.title">Right to Pay Records</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>You're entitled to a record of your hours and pay for every pay period. Keeping your own notes &mdash; photos of schedules, texts about hours &mdash; can help if you ever need to file a claim.</p>
+        <p data-i18n="kyr.records.body">You're entitled to a record of your hours and pay for every pay period. Keeping your own notes &mdash; photos of schedules, texts about hours &mdash; can help if you ever need to file a claim.</p>
       </div>
     </div>
 
@@ -889,12 +891,12 @@
       <button class="acc-head" onclick="toggleAcc('immigration')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
-          <span class="acc-title">Immigration Status &amp; Your Rights</span>
+          <span class="acc-title" data-i18n="kyr.immigration.title">Immigration Status &amp; Your Rights</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>Labor laws protect every worker regardless of immigration status. You have the same right to minimum wage, overtime, and a safe workplace as anyone else.</p>
+        <p data-i18n="kyr.immigration.body">Labor laws protect every worker regardless of immigration status. You have the same right to minimum wage, overtime, and a safe workplace as anyone else.</p>
       </div>
     </div>
 
@@ -902,17 +904,17 @@
       <button class="acc-head" onclick="toggleAcc('recover')">
         <span class="acc-head-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M6 7h11a3 3 0 010 6H8a3 3 0 000 6h10" stroke-linecap="round"/></svg>
-          <span class="acc-title">What You Can Recover</span>
+          <span class="acc-title" data-i18n="kyr.recover.title">What You Can Recover</span>
         </span>
         <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="acc-body">
-        <p>Beyond the wages you're owed, you may be entitled to additional damages and, in some cases, your attorney's fees covered &mdash; at no upfront cost to you.</p>
+        <p data-i18n="kyr.recover.body">Beyond the wages you're owed, you may be entitled to additional damages and, in some cases, your attorney's fees covered &mdash; at no upfront cost to you.</p>
       </div>
     </div>
 
     <div class="statute-note">
-      <p><strong>Statute of limitations:</strong> You generally have <strong>3 years</strong> to file a claim in Virginia, Maryland, and DC. Don't wait too long.</p>
+      <p data-i18n="kyr.statute"><strong>Statute of limitations:</strong> You generally have <strong>3 years</strong> to file a claim in Virginia, Maryland, and DC. Don't wait too long.</p>
     </div>
 
   </div>
@@ -923,85 +925,85 @@
 <main id="page-whatis" class="page">
 
   <div class="wit-intro">
-    <p class="eyebrow">What Is Wage Theft?</p>
-    <h1>When you don't get paid what you earned</h1>
-    <p>Wage theft happens when an employer fails to pay a worker the full wages they're legally owed. It's the most common form of workplace theft in the country &mdash; and most people who experience it don't realize it's illegal, or don't know what to do about it.</p>
+    <p class="eyebrow" data-i18n="wit.eyebrow">What Is Wage Theft?</p>
+    <h1 data-i18n="wit.title">When you don't get paid what you earned</h1>
+    <p data-i18n="wit.intro">Wage theft happens when an employer fails to pay a worker the full wages they're legally owed. It's the most common form of workplace theft in the country &mdash; and most people who experience it don't realize it's illegal, or don't know what to do about it.</p>
   </div>
 
   <div class="wit-types">
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <h3>Unpaid overtime</h3>
-      <p>Working more than 40 hours a week without getting time-and-a-half for the extra hours.</p>
+      <h3 data-i18n="wit.type1.title">Unpaid overtime</h3>
+      <p data-i18n="wit.type1.body">Working more than 40 hours a week without getting time-and-a-half for the extra hours.</p>
     </div>
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.8-2.5 2-2.5 3.5M12 16h.01" stroke-linecap="round"/></svg>
-      <h3>Paid below minimum wage</h3>
-      <p>Getting an hourly rate lower than what your state requires, even if you agreed to it.</p>
+      <h3 data-i18n="wit.type2.title">Paid below minimum wage</h3>
+      <p data-i18n="wit.type2.body">Getting an hourly rate lower than what your state requires, even if you agreed to it.</p>
     </div>
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="20" y1="6" x2="10" y2="20" stroke-linecap="round"/><path d="M10 20 L6 24 M10 20 L8 26 M10 20 L13 25" stroke-linecap="round"/></svg>
-      <h3>Working off the clock</h3>
-      <p>Being asked to prep, clean up, or keep working after you've clocked out, unpaid.</p>
+      <h3 data-i18n="wit.type3.title">Working off the clock</h3>
+      <p data-i18n="wit.type3.body">Being asked to prep, clean up, or keep working after you've clocked out, unpaid.</p>
     </div>
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M11 11 Q12 9.5 14 11 M11 13.5 H16 M11 16 Q12 17.5 14 16" stroke-linecap="round"/></svg>
-      <h3>Stolen tips</h3>
-      <p>Your employer keeping part or all of your tips, or pooling them in ways the law doesn't allow.</p>
+      <h3 data-i18n="wit.type4.title">Stolen tips</h3>
+      <p data-i18n="wit.type4.body">Your employer keeping part or all of your tips, or pooling them in ways the law doesn't allow.</p>
     </div>
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="8" width="18" height="13" rx="1.5"/><path d="M5 9 L14 16 L23 9"/></svg>
-      <h3>Missing final paycheck</h3>
-      <p>Not receiving your last paycheck on time &mdash; or at all &mdash; after you quit or were let go.</p>
+      <h3 data-i18n="wit.type5.title">Missing final paycheck</h3>
+      <p data-i18n="wit.type5.body">Not receiving your last paycheck on time &mdash; or at all &mdash; after you quit or were let go.</p>
     </div>
     <div class="wit-type-card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 9h18"/></svg>
-      <h3>Illegal deductions</h3>
-      <p>Money taken out of your pay for uniforms, breakages, or shortages without your consent.</p>
+      <h3 data-i18n="wit.type6.title">Illegal deductions</h3>
+      <p data-i18n="wit.type6.body">Money taken out of your pay for uniforms, breakages, or shortages without your consent.</p>
     </div>
   </div>
 
   <div class="wit-myth-section">
-    <h2 class="section-title" style="padding:0; margin-bottom: 18px;">Common myths</h2>
+    <h2 class="section-title" style="padding:0; margin-bottom: 18px;" data-i18n="wit.myths.title">Common myths</h2>
     <div class="wit-myth-grid">
       <div class="wit-myth">
         <div class="wit-myth-row myth">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-          <div><span class="label">Myth</span><p>"I agreed to be paid this way, so it's legal."</p></div>
+          <div><span class="label" data-i18n="wit.label.myth">Myth</span><p data-i18n="wit.myth1">"I agreed to be paid this way, so it's legal."</p></div>
         </div>
         <div class="wit-myth-row fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div><span class="label">Fact</span><p>Minimum wage and overtime rules can't be waived, even with your agreement.</p></div>
+          <div><span class="label" data-i18n="wit.label.fact">Fact</span><p data-i18n="wit.fact1">Minimum wage and overtime rules can't be waived, even with your agreement.</p></div>
         </div>
       </div>
       <div class="wit-myth">
         <div class="wit-myth-row myth">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-          <div><span class="label">Myth</span><p>"I'm undocumented, so I have no rights."</p></div>
+          <div><span class="label" data-i18n="wit.label.myth">Myth</span><p data-i18n="wit.myth2">"I'm undocumented, so I have no rights."</p></div>
         </div>
         <div class="wit-myth-row fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div><span class="label">Fact</span><p>Labor laws protect every worker, regardless of immigration status.</p></div>
+          <div><span class="label" data-i18n="wit.label.fact">Fact</span><p data-i18n="wit.fact2">Labor laws protect every worker, regardless of immigration status.</p></div>
         </div>
       </div>
       <div class="wit-myth">
         <div class="wit-myth-row myth">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-          <div><span class="label">Myth</span><p>"I'm paid salary, so overtime doesn't apply to me."</p></div>
+          <div><span class="label" data-i18n="wit.label.myth">Myth</span><p data-i18n="wit.myth3">"I'm paid salary, so overtime doesn't apply to me."</p></div>
         </div>
         <div class="wit-myth-row fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div><span class="label">Fact</span><p>Many salaried workers still legally qualify for overtime pay.</p></div>
+          <div><span class="label" data-i18n="wit.label.fact">Fact</span><p data-i18n="wit.fact3">Many salaried workers still legally qualify for overtime pay.</p></div>
         </div>
       </div>
       <div class="wit-myth">
         <div class="wit-myth-row myth">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-          <div><span class="label">Myth</span><p>"It's too late, this happened months ago."</p></div>
+          <div><span class="label" data-i18n="wit.label.myth">Myth</span><p data-i18n="wit.myth4">"It's too late, this happened months ago."</p></div>
         </div>
         <div class="wit-myth-row fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div><span class="label">Fact</span><p>You generally have up to 3 years to file a claim in VA, MD, and DC.</p></div>
+          <div><span class="label" data-i18n="wit.label.fact">Fact</span><p data-i18n="wit.fact4">You generally have up to 3 years to file a claim in VA, MD, and DC.</p></div>
         </div>
       </div>
     </div>
@@ -1009,10 +1011,10 @@
 
   <div class="wit-cta">
     <div class="wit-cta-text">
-      <h3>Think this might be happening to you?</h3>
-      <p>Check your pay in two minutes &mdash; free and anonymous.</p>
+      <h3 data-i18n="wit.cta.title">Think this might be happening to you?</h3>
+      <p data-i18n="wit.cta.sub">Check your pay in two minutes &mdash; free and anonymous.</p>
     </div>
-    <button class="btn-primary" onclick="showPage('checkpay')">Check your pay now</button>
+    <button class="btn-primary" onclick="showPage('checkpay')" data-i18n="wit.cta.btn">Check your pay now</button>
   </div>
 
 </main>
@@ -1021,8 +1023,8 @@
 <main id="page-action" class="page">
   <div class="placeholder">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 10l6-3v12l-6-3z" stroke-linejoin="round"/><path d="M11 7l8-4v18l-8-4"/></svg>
-    <h2>Take Action</h2>
-    <p>This page is coming soon &mdash; it will let you file an anonymous report and see a map of reports near you.</p>
+    <h2 data-i18n="action.title">Take Action</h2>
+    <p data-i18n="action.body">This page is coming soon &mdash; it will let you file an anonymous report and see a map of reports near you.</p>
   </div>
 </main>
 
@@ -1030,12 +1032,237 @@
 <main id="page-resources" class="page">
   <div class="placeholder">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 13 Q4 8 9 8 Q11 8 12 11 Q13 8 15 8 Q20 8 20 13 Q20 18 12 21 Q4 18 4 13 Z" stroke-linejoin="round"/></svg>
-    <h2>Resources</h2>
-    <p>This page is coming soon &mdash; it will list free legal help, community organizations, and real worker stories.</p>
+    <h2 data-i18n="resources.title">Resources</h2>
+    <p data-i18n="resources.body">This page is coming soon &mdash; it will list free legal help, community organizations, and real worker stories.</p>
   </div>
 </main>
 
 <script>
+  // ===== i18n dictionary =====
+  const I18N = {
+    en: {
+      'nav.home': 'Home', 'nav.checkpay': 'Check My Pay', 'nav.whatis': 'What Is Wage Theft?',
+      'nav.rights': 'Know Your Rights', 'nav.action': 'Take Action', 'nav.resources': 'Resources',
+
+      'hero.location': 'DC &middot; Maryland &middot; Virginia',
+      'hero.title': "Your work.<br>Your pay.<br><span class=\"accent\">Your rights.</span>",
+      'hero.sub': "If your boss didn't pay you everything you earned, that's against the law &mdash; and you have options. Check your pay in two minutes, free and anonymous.",
+      'hero.btn1': 'Check your pay now',
+      'hero.btn2': 'What is wage theft?',
+
+      'home.built.title': 'Built for everyone',
+      'home.built.sub': "No matter where you work &mdash; you have rights and free tools to defend them.",
+      'home.everything.title': 'Everything in one place',
+      'home.everything.sub': "Pick what you need &mdash; each section guides you step by step.",
+      'home.symptom.title': 'What happened to you?',
+      'home.symptom.sub': "Pick your situation and we'll help in less than 2 minutes.",
+
+      'job.restaurants': 'Restaurants', 'job.retail': 'Retail', 'job.delivery': 'Delivery',
+      'job.construction': 'Construction', 'job.cleaning': 'Cleaning', 'job.moving': 'Moving',
+      'job.other': '+ every other job',
+
+      'card.checkpay.title': 'Check My Pay', 'card.checkpay.desc': 'Quick checker and a short quiz',
+      'card.rights.title': 'Know Your Rights', 'card.rights.desc': 'In English, Spanish, and audio',
+      'card.action.title': 'Take Action', 'card.action.desc': 'Report what happened &amp; see the map',
+      'card.resources.title': 'Resources', 'card.resources.desc': 'Free help near you',
+
+      'symptom.hours': "I wasn't paid for all my hours",
+      'symptom.overtime': "I wasn't paid overtime",
+      'symptom.tips': 'They kept my tips',
+      'symptom.offclock': 'I worked off the clock',
+      'symptom.finalcheck': 'I never got my final paycheck',
+      'symptom.check': 'Check this &gt;',
+
+      'trust.anon': 'Completely anonymous', 'trust.private': 'Private',
+
+      'cmp.eyebrow': 'Check My Pay', 'cmp.title': "See if you're owed money",
+      'cmp.sub': 'Pick the option that fits you best. Both are free, anonymous, and take just a few minutes.',
+      'cmp.tab.quick': 'Quick Checker', 'cmp.tab.quiz': 'Were You a Victim?',
+      'cmp.step1': 'Your details', 'cmp.step2': 'Results',
+      'cmp.formtitle': 'Enter your work details',
+      'cmp.label.state': 'Where do you work?',
+      'cmp.label.rate': 'What did you actually get paid per hour?',
+      'cmp.label.hours': 'Hours/week', 'cmp.label.weeks': 'Weeks affected',
+      'cmp.submit': "See what you're owed",
+      'cmp.privacy': 'Nothing is saved or shared',
+      'cmp.result.eyebrow': 'YOUR ESTIMATE', 'cmp.result.sub': 'Based on what you entered',
+      'cmp.result.label': 'You may be owed',
+      'cmp.bd.gap': 'Underpayment per hour', 'cmp.bd.hours': 'Total hours affected', 'cmp.bd.type': 'Type of violation',
+      'cmp.next.label': 'What you can do next',
+      'cmp.next.rights': 'Know Your Rights', 'cmp.next.report': 'File an anonymous report', 'cmp.next.legal': 'Talk to free legal help',
+      'cmp.quiz.placeholder': 'The "Were You a Victim?" quiz will walk you through a few simple yes/no questions to spot signs of wage theft &mdash; coming together with the rest of the page.',
+
+      'state.va': 'Virginia', 'state.md': 'Maryland', 'state.dc': 'DC',
+
+      'kyr.title': 'Your rights, explained',
+      'kyr.sub': 'Tap a topic to learn more &mdash; these apply regardless of immigration status.',
+      'kyr.listen': 'Listen instead',
+      'kyr.wage.title': 'Minimum Wage',
+      'kyr.wage.body': 'Every hour you work must be paid at least the state minimum wage &mdash; no exceptions for tips, training, or trial periods.',
+      'kyr.overtime.title': 'Overtime Pay',
+      'kyr.overtime.body': "If you work more than 40 hours in a week, you're generally owed 1.5 times your regular hourly rate for every hour past 40 &mdash; even if you're paid a flat salary or \"off the books.\"",
+      'kyr.retaliation.title': 'Protection from Retaliation',
+      'kyr.retaliation.body': "It's illegal for your employer to fire, demote, cut your hours, or threaten you for asking about your pay, filing a complaint, or talking to a coworker about wages.",
+      'kyr.records.title': 'Right to Pay Records',
+      'kyr.records.body': "You're entitled to a record of your hours and pay for every pay period. Keeping your own notes &mdash; photos of schedules, texts about hours &mdash; can help if you ever need to file a claim.",
+      'kyr.immigration.title': 'Immigration Status &amp; Your Rights',
+      'kyr.immigration.body': 'Labor laws protect every worker regardless of immigration status. You have the same right to minimum wage, overtime, and a safe workplace as anyone else.',
+      'kyr.recover.title': 'What You Can Recover',
+      'kyr.recover.body': "Beyond the wages you're owed, you may be entitled to additional damages and, in some cases, your attorney's fees covered &mdash; at no upfront cost to you.",
+      'kyr.statute': "<strong>Statute of limitations:</strong> You generally have <strong>3 years</strong> to file a claim in Virginia, Maryland, and DC. Don't wait too long.",
+
+      'wit.eyebrow': 'What Is Wage Theft?',
+      'wit.title': "When you don't get paid what you earned",
+      'wit.intro': "Wage theft happens when an employer fails to pay a worker the full wages they're legally owed. It's the most common form of workplace theft in the country &mdash; and most people who experience it don't realize it's illegal, or don't know what to do about it.",
+      'wit.type1.title': 'Unpaid overtime', 'wit.type1.body': 'Working more than 40 hours a week without getting time-and-a-half for the extra hours.',
+      'wit.type2.title': 'Paid below minimum wage', 'wit.type2.body': 'Getting an hourly rate lower than what your state requires, even if you agreed to it.',
+      'wit.type3.title': 'Working off the clock', 'wit.type3.body': "Being asked to prep, clean up, or keep working after you've clocked out, unpaid.",
+      'wit.type4.title': 'Stolen tips', 'wit.type4.body': "Your employer keeping part or all of your tips, or pooling them in ways the law doesn't allow.",
+      'wit.type5.title': 'Missing final paycheck', 'wit.type5.body': 'Not receiving your last paycheck on time &mdash; or at all &mdash; after you quit or were let go.',
+      'wit.type6.title': 'Illegal deductions', 'wit.type6.body': 'Money taken out of your pay for uniforms, breakages, or shortages without your consent.',
+      'wit.myths.title': 'Common myths',
+      'wit.label.myth': 'Myth', 'wit.label.fact': 'Fact',
+      'wit.myth1': '"I agreed to be paid this way, so it\'s legal."',
+      'wit.fact1': "Minimum wage and overtime rules can't be waived, even with your agreement.",
+      'wit.myth2': '"I\'m undocumented, so I have no rights."',
+      'wit.fact2': 'Labor laws protect every worker, regardless of immigration status.',
+      'wit.myth3': '"I\'m paid salary, so overtime doesn\'t apply to me."',
+      'wit.fact3': 'Many salaried workers still legally qualify for overtime pay.',
+      'wit.myth4': '"It\'s too late, this happened months ago."',
+      'wit.fact4': 'You generally have up to 3 years to file a claim in VA, MD, and DC.',
+      'wit.cta.title': 'Think this might be happening to you?',
+      'wit.cta.sub': 'Check your pay in two minutes &mdash; free and anonymous.',
+      'wit.cta.btn': 'Check your pay now',
+
+      'action.title': 'Take Action',
+      'action.body': 'This page is coming soon &mdash; it will let you file an anonymous report and see a map of reports near you.',
+      'resources.title': 'Resources',
+      'resources.body': 'This page is coming soon &mdash; it will list free legal help, community organizations, and real worker stories.',
+    },
+
+    es: {
+      'nav.home': 'Inicio', 'nav.checkpay': 'Revisa Tu Pago', 'nav.whatis': 'Qu&eacute; Es el Robo de Salario?',
+      'nav.rights': 'Conoce Tus Derechos', 'nav.action': 'Toma Acci&oacute;n', 'nav.resources': 'Recursos',
+
+      'hero.location': 'DC &middot; Maryland &middot; Virginia',
+      'hero.title': "Tu trabajo.<br>Tu pago.<br><span class=\"accent\">Tus derechos.</span>",
+      'hero.sub': 'Si tu jefe no te pag&oacute; todo lo que ganaste, eso va contra la ley &mdash; y tienes opciones. Revisa tu pago en dos minutos, gratis y de forma an&oacute;nima.',
+      'hero.btn1': 'Revisa tu pago ahora',
+      'hero.btn2': 'Qu&eacute; es el robo de salario?',
+
+      'home.built.title': 'Hecho para todos',
+      'home.built.sub': 'Sin importar d&oacute;nde trabajes &mdash; tienes derechos y herramientas gratuitas para defenderlos.',
+      'home.everything.title': 'Todo en un solo lugar',
+      'home.everything.sub': 'Elige lo que necesitas &mdash; cada secci&oacute;n te gu&iacute;a paso a paso.',
+      'home.symptom.title': 'Qu&eacute; te pas&oacute;?',
+      'home.symptom.sub': 'Elige tu situaci&oacute;n y te ayudaremos en menos de 2 minutos.',
+
+      'job.restaurants': 'Restaurantes', 'job.retail': 'Tiendas', 'job.delivery': 'Entregas',
+      'job.construction': 'Construcci&oacute;n', 'job.cleaning': 'Limpieza', 'job.moving': 'Mudanzas',
+      'job.other': '+ cualquier otro trabajo',
+
+      'card.checkpay.title': 'Revisa Tu Pago', 'card.checkpay.desc': 'Revisi&oacute;n r&aacute;pida y un cuestionario corto',
+      'card.rights.title': 'Conoce Tus Derechos', 'card.rights.desc': 'En ingl&eacute;s, espa&ntilde;ol y audio',
+      'card.action.title': 'Toma Acci&oacute;n', 'card.action.desc': 'Reporta lo que pas&oacute; y mira el mapa',
+      'card.resources.title': 'Recursos', 'card.resources.desc': 'Ayuda gratuita cerca de ti',
+
+      'symptom.hours': 'No me pagaron todas mis horas',
+      'symptom.overtime': 'No me pagaron horas extra',
+      'symptom.tips': 'Se quedaron con mis propinas',
+      'symptom.offclock': 'Trabaj&eacute; sin que me pagaran',
+      'symptom.finalcheck': 'Nunca recib&iacute; mi &uacute;ltimo cheque',
+      'symptom.check': 'Revisar &gt;',
+
+      'trust.anon': 'Completamente an&oacute;nimo', 'trust.private': 'Privado',
+
+      'cmp.eyebrow': 'Revisa Tu Pago', 'cmp.title': 'Mira si te deben dinero',
+      'cmp.sub': 'Elige la opci&oacute;n que mejor te funcione. Ambas son gratis, an&oacute;nimas y toman solo unos minutos.',
+      'cmp.tab.quick': 'Revisi&oacute;n R&aacute;pida', 'cmp.tab.quiz': 'Fuiste V&iacute;ctima?',
+      'cmp.step1': 'Tus datos', 'cmp.step2': 'Resultados',
+      'cmp.formtitle': 'Ingresa los detalles de tu trabajo',
+      'cmp.label.state': 'D&oacute;nde trabajas?',
+      'cmp.label.rate': 'Cu&aacute;nto te pagaron realmente por hora?',
+      'cmp.label.hours': 'Horas/semana', 'cmp.label.weeks': 'Semanas afectadas',
+      'cmp.submit': 'Ver cu&aacute;nto te deben',
+      'cmp.privacy': 'Nada se guarda ni se comparte',
+      'cmp.result.eyebrow': 'TU ESTIMADO', 'cmp.result.sub': 'Basado en lo que ingresaste',
+      'cmp.result.label': 'Es posible que te deban',
+      'cmp.bd.gap': 'Diferencia por hora', 'cmp.bd.hours': 'Total de horas afectadas', 'cmp.bd.type': 'Tipo de violaci&oacute;n',
+      'cmp.next.label': 'Qu&eacute; puedes hacer ahora',
+      'cmp.next.rights': 'Conoce Tus Derechos', 'cmp.next.report': 'Presentar un reporte an&oacute;nimo', 'cmp.next.legal': 'Hablar con ayuda legal gratuita',
+      'cmp.quiz.placeholder': 'El cuestionario "Fuiste V&iacute;ctima?" te guiar&aacute; con preguntas simples de s&iacute;/no para detectar se&ntilde;ales de robo de salario &mdash; se unir&aacute; pronto al resto de la p&aacute;gina.',
+
+      'state.va': 'Virginia', 'state.md': 'Maryland', 'state.dc': 'DC',
+
+      'kyr.title': 'Tus derechos, explicados',
+      'kyr.sub': 'Toca un tema para aprender m&aacute;s &mdash; estos derechos aplican sin importar tu estatus migratorio.',
+      'kyr.listen': 'Escuchar en su lugar',
+      'kyr.wage.title': 'Salario M&iacute;nimo',
+      'kyr.wage.body': 'Cada hora que trabajas debe pagarse al menos al salario m&iacute;nimo estatal &mdash; sin excepciones por propinas, entrenamiento o per&iacute;odos de prueba.',
+      'kyr.overtime.title': 'Pago de Horas Extra',
+      'kyr.overtime.body': 'Si trabajas m&aacute;s de 40 horas a la semana, generalmente te deben 1.5 veces tu tarifa regular por cada hora despu&eacute;s de 40 &mdash; incluso si te pagan un salario fijo o "por fuera".',
+      'kyr.retaliation.title': 'Protecci&oacute;n contra Represalias',
+      'kyr.retaliation.body': 'Es ilegal que tu empleador te despida, te baje de puesto, te reduzca las horas o te amenace por preguntar sobre tu pago, presentar una queja, o hablar con un compa&ntilde;ero sobre salarios.',
+      'kyr.records.title': 'Derecho a Tus Registros de Pago',
+      'kyr.records.body': 'Tienes derecho a un registro de tus horas y pago en cada per&iacute;odo. Guardar tus propias notas &mdash; fotos de horarios, mensajes sobre horas &mdash; puede ayudarte si alguna vez necesitas presentar un reclamo.',
+      'kyr.immigration.title': 'Estatus Migratorio y Tus Derechos',
+      'kyr.immigration.body': 'Las leyes laborales protegen a todos los trabajadores sin importar su estatus migratorio. Tienes el mismo derecho al salario m&iacute;nimo, horas extra y un lugar de trabajo seguro que cualquier otra persona.',
+      'kyr.recover.title': 'Lo Que Puedes Recuperar',
+      'kyr.recover.body': 'Adem&aacute;s de los salarios que te deben, podr&iacute;as tener derecho a da&ntilde;os adicionales y, en algunos casos, a que se cubran los honorarios de tu abogado &mdash; sin costo inicial para ti.',
+      'kyr.statute': '<strong>Plazo legal:</strong> Generalmente tienes <strong>3 a&ntilde;os</strong> para presentar un reclamo en Virginia, Maryland y DC. No esperes demasiado.',
+
+      'wit.eyebrow': 'Qu&eacute; Es el Robo de Salario?',
+      'wit.title': 'Cuando no te pagan lo que ganaste',
+      'wit.intro': 'El robo de salario ocurre cuando un empleador no le paga a un trabajador todo el salario que legalmente le corresponde. Es la forma m&aacute;s com&uacute;n de robo laboral en el pa&iacute;s &mdash; y la mayor&iacute;a de las personas que lo viven no saben que es ilegal, o no saben qu&eacute; hacer al respecto.',
+      'wit.type1.title': 'Horas extra no pagadas', 'wit.type1.body': 'Trabajar m&aacute;s de 40 horas a la semana sin recibir tiempo y medio por las horas extra.',
+      'wit.type2.title': 'Pago por debajo del salario m&iacute;nimo', 'wit.type2.body': 'Recibir una tarifa por hora menor a la que tu estado requiere, aunque hayas aceptado.',
+      'wit.type3.title': 'Trabajar sin que te paguen', 'wit.type3.body': 'Que te pidan preparar, limpiar, o seguir trabajando despu&eacute;s de marcar tu salida, sin pago.',
+      'wit.type4.title': 'Propinas robadas', 'wit.type4.body': 'Que tu empleador se quede con parte o todas tus propinas, o las reparta de formas que la ley no permite.',
+      'wit.type5.title': 'Falta el &uacute;ltimo cheque', 'wit.type5.body': 'No recibir tu &uacute;ltimo cheque a tiempo &mdash; o nunca &mdash; despu&eacute;s de renunciar o ser despedido.',
+      'wit.type6.title': 'Deducciones ilegales', 'wit.type6.body': 'Dinero descontado de tu pago por uniformes, da&ntilde;os o faltantes sin tu consentimiento.',
+      'wit.myths.title': 'Mitos comunes',
+      'wit.label.myth': 'Mito', 'wit.label.fact': 'Realidad',
+      'wit.myth1': '"Acept&eacute; que me pagaran as&iacute;, as&iacute; que es legal."',
+      'wit.fact1': 'Las reglas de salario m&iacute;nimo y horas extra no se pueden renunciar, ni con tu acuerdo.',
+      'wit.myth2': '"Soy indocumentado, as&iacute; que no tengo derechos."',
+      'wit.fact2': 'Las leyes laborales protegen a todos los trabajadores, sin importar su estatus migratorio.',
+      'wit.myth3': '"Me pagan salario fijo, as&iacute; que las horas extra no aplican para m&iacute;."',
+      'wit.fact3': 'Muchos trabajadores asalariados a&uacute;n califican legalmente para horas extra.',
+      'wit.myth4': '"Ya es muy tarde, esto pas&oacute; hace meses."',
+      'wit.fact4': 'Generalmente tienes hasta 3 a&ntilde;os para presentar un reclamo en VA, MD y DC.',
+      'wit.cta.title': 'Crees que esto te est&aacute; pasando?',
+      'wit.cta.sub': 'Revisa tu pago en dos minutos &mdash; gratis y an&oacute;nimo.',
+      'wit.cta.btn': 'Revisa tu pago ahora',
+
+      'action.title': 'Toma Acci&oacute;n',
+      'action.body': 'Esta p&aacute;gina estar&aacute; lista pronto &mdash; te permitir&aacute; presentar un reporte an&oacute;nimo y ver un mapa de reportes cerca de ti.',
+      'resources.title': 'Recursos',
+      'resources.body': 'Esta p&aacute;gina estar&aacute; lista pronto &mdash; incluir&aacute; ayuda legal gratuita, organizaciones comunitarias e historias reales de trabajadores.',
+    }
+  };
+
+  let currentLang = 'en';
+
+  function applyTranslations() {
+    const dict = I18N[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+    document.documentElement.lang = currentLang;
+    document.getElementById('lang-toggle-label').textContent = currentLang === 'en' ? 'EN / ES' : 'ES / EN';
+    // Re-run dynamic, language-aware bits
+    refreshCmpHints();
+    updateResult();
+  }
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    applyTranslations();
+  }
+
   // ===== Page navigation =====
   function showPage(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1058,18 +1285,26 @@
 
   // ===== Check My Pay: state + calculator =====
   const MINWAGE = { VA: 12.77, MD: 15.00, DC: 17.50 };
-  const STATE_NAMES = { VA: 'Virginia', MD: 'Maryland', DC: 'DC' };
-  const STATE_WEEKS = { VA: '156 weeks (3 years)', MD: '156 weeks (3 years)', DC: '156 weeks (3 years)' };
   let currentState = 'VA';
+
+  function stateName(code) {
+    const key = 'state.' + code.toLowerCase();
+    return I18N[currentLang][key] || code;
+  }
 
   function selectState(state) {
     currentState = state;
     document.querySelectorAll('#state-row .state-opt').forEach(b => {
       b.classList.toggle('selected', b.dataset.state === state);
     });
-    document.getElementById('cmp-weeks-hint').innerHTML =
-      STATE_NAMES[state] + ' law allows claims up to 3 years back (&asymp; 156 weeks)';
     updateResult();
+  }
+
+  function refreshCmpHints() {
+    const weeksHint = currentLang === 'es'
+      ? 'La ley de ' + stateName(currentState) + ' permite reclamos de hasta 3 a&ntilde;os atr&aacute;s (&asymp; 156 semanas)'
+      : stateName(currentState) + ' law allows claims up to 3 years back (&asymp; 156 weeks)';
+    document.getElementById('cmp-weeks-hint').innerHTML = weeksHint;
   }
 
   function updateResult() {
@@ -1081,18 +1316,28 @@
     const totalHours = hours * weeks;
     const owed = gap * totalHours;
 
-    document.getElementById('cmp-rate-hint').innerHTML =
-      gap > 0
-        ? STATE_NAMES[currentState] + ' minimum wage is <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; you may be underpaid'
-        : STATE_NAMES[currentState] + ' minimum wage is <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; you appear to meet it';
+    refreshCmpHints();
+
+    const rateHint = currentLang === 'es'
+      ? (gap > 0
+          ? 'El salario m&iacute;nimo de ' + stateName(currentState) + ' es <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; es posible que te paguen de menos'
+          : 'El salario m&iacute;nimo de ' + stateName(currentState) + ' es <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; parece que lo cumples')
+      : (gap > 0
+          ? stateName(currentState) + ' minimum wage is <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; you may be underpaid'
+          : stateName(currentState) + ' minimum wage is <strong>$' + minWage.toFixed(2) + '/hr</strong> &mdash; you appear to meet it');
+    document.getElementById('cmp-rate-hint').innerHTML = rateHint;
 
     document.getElementById('result-amount').textContent =
       '$' + owed.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    const hrsLabel = currentLang === 'es' ? 'hrs' : 'hrs';
+    const wksLabel = currentLang === 'es' ? 'semanas' : 'weeks';
     document.getElementById('result-formula').innerHTML =
-      '$' + gap.toFixed(2) + '/hr &times; ' + hours + ' hrs &times; ' + weeks + ' weeks';
+      '$' + gap.toFixed(2) + '/hr &times; ' + hours + ' ' + hrsLabel + ' &times; ' + weeks + ' ' + wksLabel;
     document.getElementById('bd-gap').textContent = '$' + gap.toFixed(2);
-    document.getElementById('bd-hours').textContent = totalHours.toLocaleString('en-US') + ' hrs';
-    document.getElementById('bd-type').textContent = gap > 0 ? 'Minimum wage' : 'No gap found';
+    document.getElementById('bd-hours').textContent = totalHours.toLocaleString('en-US') + ' ' + hrsLabel;
+    document.getElementById('bd-type').textContent = gap > 0
+      ? (currentLang === 'es' ? 'Salario m&iacute;nimo' : 'Minimum wage')
+      : (currentLang === 'es' ? 'Sin diferencia encontrada' : 'No gap found');
   }
 
   // ===== Know Your Rights: state pills =====
@@ -1117,21 +1362,22 @@
     if (isSpeaking) {
       window.speechSynthesis.cancel();
       isSpeaking = false;
-      label.textContent = 'Listen instead';
+      label.textContent = I18N[currentLang]['kyr.listen'];
       return;
     }
     const text = Array.from(document.querySelectorAll('#rights-accordion .acc-title, #rights-accordion .acc-body p'))
       .map(el => el.textContent).join('. ');
     const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = currentLang === 'es' ? 'es-US' : 'en-US';
     utter.rate = 0.95;
-    utter.onend = () => { isSpeaking = false; label.textContent = 'Listen instead'; };
+    utter.onend = () => { isSpeaking = false; label.textContent = I18N[currentLang]['kyr.listen']; };
     window.speechSynthesis.speak(utter);
     isSpeaking = true;
-    label.textContent = 'Stop listening';
+    label.textContent = currentLang === 'es' ? 'Detener' : 'Stop listening';
   }
 
-  // Initial calculation on load
-  updateResult();
+  // Initial load
+  applyTranslations();
 </script>
 
 </body>
