@@ -205,7 +205,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 20px 24px;
+    overflow: hidden;
+  }
+  .hero-img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    object-fit: contain;
+  }
+  @media (max-width: 900px) {
+    .hero-img { max-width: 320px; }
   }
 
   /* Built for everyone */
@@ -589,20 +599,8 @@
         <button class="btn-secondary" onclick="showPage('whatis')" data-i18n="hero.btn2">What is wage theft?</button>
       </div>
     </div>
-    <div class="hero-right" aria-hidden="true">
-      <svg width="220" height="220" viewBox="0 0 220 220">
-        <circle cx="110" cy="55" r="28" fill="none" stroke="#14463F" stroke-width="3" stroke-linecap="round"/>
-        <path d="M85 95 Q110 80 135 95 L140 175 L80 175 Z" fill="none" stroke="#14463F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M135 105 L160 140 L150 155" fill="none" stroke="#E0832B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <rect x="142" y="125" width="38" height="58" rx="6" fill="#FFF8EC" stroke="#1C2B26" stroke-width="2.5"/>
-        <line x1="150" y1="140" x2="172" y2="140" stroke="#B5482E" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="150" y1="150" x2="172" y2="150" stroke="#C9A876" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="85" y1="175" x2="135" y2="175" stroke="#14463F" stroke-width="3" stroke-linecap="round"/>
-        <path d="M30 60 Q34 50 44 52" fill="none" stroke="#E0832B" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="190" cy="60" r="3" fill="#B5482E"/>
-        <circle cx="200" cy="75" r="2" fill="#E0832B"/>
-        <circle cx="185" cy="80" r="2.5" fill="#14463F"/>
-      </svg>
+    <div class="hero-right">
+      <img src="assets/header-workers.png" alt="Illustration of three workers — a construction worker, a retail worker with a clipboard, and a delivery worker carrying a package — beneath a dollar-sign badge" class="hero-img">
     </div>
   </section>
 
@@ -1382,3 +1380,4 @@
 
 </body>
 </html>
+
